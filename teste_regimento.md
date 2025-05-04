@@ -69,8 +69,11 @@ II – Da data do compromisso, no caso de convocação de suplente.
 Da Eleição da Mesa
 
 - Art. 5º No dia 1º de fevereiro da 1ª Sessão Legislativa e no dia 30 de outubro da 2ª Sessão Legislativa, realizar-se-á a eleição da Mesa Diretora, por votação nominal, presente a maioria absoluta dos Deputados e observadas as seguintes exigências e formalidades:
+
 I – Registro, junto à Mesa, individualmente ou por chapa, de candidatos que pretendam concorrer aos cargos que compõem a Mesa Diretora da Assembleia;
+
 II – Chamada nominal dos Deputados para a votação, o qual pronunciará em voz alta os nomes e os cargos de seus candidatos;
+
 III – acompanhamento dos trabalhos de apuração, junto à Mesa, por dois ou mais Deputados indicados à Presidência por partidos diferentes e por candidatos avulsos;
 
 IV – Proclamação dos votos, em voz alta, por um secretário e sua anotação por dois outros, à medida que apurados;
@@ -182,24 +185,40 @@ Parágrafo único. A competência dos membros da Mesa em matéria administrativa
 - Art. 15. O Presidente representa a Assembleia administrativa, judicial e extrajudicialmente, dentro ou fora dela, regula seus trabalhos e fiscaliza sua ordem, na conformidade deste Regimento.
 
 - Art. 16. São atribuições do Presidente, além de outras previstas neste Regimento ou que decorram da natureza de suas funções e prerrogativas:
-I – quanto às sessões da Assembleia:
+
+### I – quanto às sessões da Assembleia
+
 a) abrir, presidir, suspender e encerrar as sessões;
+
 b) manter a ordem e fazer cumprir este Regimento;
+
 c) fazer ler o expediente e as comunicações pelo 1° Secretário;
+
 d) conceder a palavra aos Deputados;
+
 e) interromper o orador que se desviar da questão, falar contra o vencido ou faltar à consideração para com a Assembleia, aos seus membros e aos Poderes constituídos, advertindo-o e, em caso de reincidência, cassar-lhe a palavra;
+
 f) proceder de igual modo quando o orador fizer pronunciamento que contenha ofensa às instituições nacionais, propaganda de guerra, qualquer forma de preconceito ou discriminação social, ou que configure crime contra a honra ou incitamento à prática de delito;
+
 g) determinar o não registro de discurso ou aparte pela taquigrafia quando
 antirregimental;
+
 h) convidar o Deputado a retirar-se do Plenário quando perturbar a ordem;
 
 i) chamar a atenção do orador instantes antes de se esgotar o tempo a que tem direito e quando este estiver vencido;
+
 j) decidir as questões de ordem e as reclamações;
+
 l) determinar ao 1° Secretário a leitura da ordem do dia;
+
 m) submeter à discussão e votação a matéria a isso destinada;
+
 n) estabelecer o ponto da matéria que deve ser objeto da votação;
+
 o) anunciar o resultado da votação;
+
 p) fazer organizar, sob sua responsabilidade, a ordem do dia das sessões com, no mínimo, 24 (vinte e quatro) horas de antecedência;
+
 q) convocar, a requerimento do Líder do Governo, sessões extraordinárias da Assembleia Legislativa, definindo a pauta da sessão com as matérias que tramitarão em regime de urgência;
 
 de presença;
@@ -463,18 +482,20 @@ b) direção dos trabalhos da Assembleia durante as reuniões;
 c) direção da polícia interna do edifício onde estiver funcionando a Assembleia;
 d) servidores colocados à disposição da Assembleia;
 e) economia interna da Casa;
-f) iniciativa dos projetos de resolução referentes aos servidores da Secretaria; II – Comissão de Constituição, Justiça e Redação:
+f) iniciativa dos projetos de resolução referentes aos servidores da Secretaria;
+
+### II – Comissão de Constituição, Justiça e Redação
+
 a) aspectos constitucional, jurídico, legal, regimental, de técnica legislativa e redação dos projetos, emendas ou substitutivos;
 b) reforma da Constituição;
 c) proposições e assuntos referentes ao Poder Judiciário e ao Ministério Público;
 d) licença ao Governador e ao Vice para interromper o exercício de suas funções ou ausentar-se do País ou do Estado por mais de quinze dias;
 e) declaração de utilidade pública de entidades civis;
-f) organização do serviço público estadual, servidores civis e militares e seu regime
-
-jurídico;
-
+f) organização do serviço público estadual, servidores civis e militares e seu regime jurídico;
 g) elaborar relatório sobre veto;
-III – Comissão de Tributação, Finanças e Orçamento:
+
+### III – Comissão de Tributação, Finanças e Orçamento
+
 a) proposições e assuntos, inclusive os da competência de outras comissões, que
 
 concorram para aumentar ou diminuir tanto a despesa quanto a receita pública;
@@ -486,18 +507,21 @@ f) planos e programas de desenvolvimento estadual ou microrregional, projetos de
 g) requisição de informações, relatórios, balanços e inspeções sobre as contas de órgãos e entidades da administração estadual, nos termos da legislação vigente, com vistas ao cumprimento do processo de fiscalização;
 h) interpor representações e recursos das decisões do Tribunal de Contas, solicitando a sustação de contrato impugnado ou outras providências a cargo da Assembleia Legislativa;
 
-IV – Comissão de Educação:
+### IV – Comissão de Educação
+
 a) política e sistema educacional, recursos humanos e financeiros para a educação;
 b) assuntos atinentes à educação em geral;
 c) direito da educação;
 d) revogado
 e) revogado
 
-V – Comissão de Saúde:
+### V – Comissão de Saúde
+
 a) defesa civil, assistência e educação sanitária, saúde pública, assistência médico- hospitalar, saneamento e higiene;
 b) prevenção de doenças sensoriais e mentais;
 
-VI – Comissão de Serviços e Obras Públicas:
+### VI – Comissão de Serviços e Obras Públicas
+
 a) política de planejamento, construção, gerenciamento e manutenção dos sistemas de transportes do Estado;
 b) política de ordenação e exploração dos serviços de transportes intermunicipal;
 c) obras públicas;
@@ -507,13 +531,16 @@ f) transporte e trânsito;
 g) energia, comunicações e saneamento;
 h) estudo das questões relativas às obras públicas, ao seu uso e gozo, bem como sobre interrupção, suspensão e alteração de empreendimentos públicos.
 
-VII – Comissão de Desenvolvimento Econômico, Ciência, Tecnologia e Inovação;
+### VII – Comissão de Desenvolvimento Econômico, Ciência, Tecnologia e Inovação
+
 a) indústria, comércio, desenvolvimento regional ou estadual e demais assuntos referentes aos setores secundário e terciário;
 b) estudos para o desenvolvimento e a solução dos problemas da região geo- econômica do entorno do Distrito Federal;
 c) política estadual de ciência e tecnologia;
 d) fiscalizar e acompanhar programas governamentais de fomento às atividades de pesquisa científica e tecnológica;
 e) fiscalizar e acompanhar as iniciativas de pesquisa científica e tecnológica dos diversos órgãos da administração pública estadual;
-VIII – Comissão de Meio Ambiente e Recursos Hídricos:
+
+### VIII – Comissão de Meio Ambiente e Recursos Hídricos
+
 a) equilíbrio ecológico, preservação do meio ambiente e da qualidade de vida das populações urbana, rural e indígena;
 b) florestas, caça e pesca;
 c) cursos d’água, águas represadas e subterrâneas;
@@ -521,20 +548,19 @@ d) estudos para a solução dos problemas que afligem a flora e a fauna, especia
 do cerrado;
 e) gestão junto aos órgãos públicos estaduais para a criação e conservação de parques
 estaduais e áreas de proteção ambiental;
-IX – Comissão de Segurança Pública:
+
+### IX – Comissão de Segurança Pública
+
 a) políticas de segurança pública e seus órgãos institucionais;
 b) organização da polícia militar, polícia civil e corpo de bombeiros;
-c) fiscalização e acompanhamento de programas e políticas estaduais de segurança
-
-pública;
-
+c) fiscalização e acompanhamento de programas e políticas estaduais de segurança pública;
 d) propor solução pacífica de conflitos;
 e) promover visitas periódicas às delegacias, penitenciárias, casas de detenção e de
-
 albergados, asilos e casas de amparo a pessoas desfavorecidas e de atendimento psiquiátrico;
-
 f) investigação de violência policial;
-X – Comissão de Agricultura, Pecuária e Cooperativismo:
+
+### X – Comissão de Agricultura, Pecuária e Cooperativismo
+
 a) agricultura, pecuária, pesca e economia agrícola de modo geral;
 b) estímulos fiscais à agricultura, pecuária e cooperativismo;
 c) promoção do desenvolvimento rural e do bem-estar social no campo;
@@ -570,13 +596,9 @@ f) condições de trabalho nas empresas do setor mineral, energético e de bioco
 g) valorização das reservas minerais através de intercâmbio tecnológico; XIII – Comissão de Direitos Humanos, Cidadania e Legislação Participativa:
 a) investigação de denúncias de lesão ou ameaça aos direitos humanos, especialmente quando estiverem relacionadas aos direitos das etnias e dos grupos sociais minoritários;
 b) promoção e divulgação dos direitos humanos;
-c) colaboração com entidades não-governamentais voltadas para a defesa dos direitos
-
-humanos;
-
+c) colaboração com entidades não-governamentais voltadas para a defesa dos direitos humanos;
 d) relações de trabalho;
 e) apurar qualquer forma de violência, preconceito ou discriminação social;
-
 f) assuntos referentes ao cumprimento da declaração universal dos direitos humanos;
 g) promover visitas periódicas às delegacias, penitenciárias, casas de detenção e de albergados, aos asilos e casas de amparo a pessoas desfavorecidas e de atendimento psiquiátrico;
 h) sugestão de iniciativas legislativas oriundas de classes organizadas, sindicatos, movimentos sociais, universidades e outras entidades;
@@ -605,7 +627,6 @@ a) gestão, junto aos organismos nacionais e internacionais, no sentido de angar
 b) discussão de assuntos atinentes ao desenvolvimento dos polos turísticos do Estado;
 c) realização de seminários, palestras, encontros regionais e sessões itinerantes para debater e difundir o turismo goiano;
 d) demais ações necessárias para o desenvolvimento do turismo em Goiás. XVIII – Comissão de Assistência Social:
-
 a) política de assistência social;
 b) revogado
 c) promoção do trabalho voluntário e seus benefícios
