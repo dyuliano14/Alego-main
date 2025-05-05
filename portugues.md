@@ -15,13 +15,13 @@
 ---
 
 ### 📄 PDFs
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 00.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 02 - Conjunções.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 04.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 06.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 07.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 10.pdf)
-- [Aula 00 (PDF)](../pdfs/portugues/Aula 13.pdf)
+- [Aula 00 (PDF)](../pdfs/portugues/blob/Aula00.pdf)
+- [Aula 01 (PDF)](../pdfs/portugues/Aula02-Conjunções.pdf)
+- [Aula 02 (PDF)](../pdfs/portugues/Aula04.pdf)
+- [Aula 03 (PDF)](../pdfs/portugues/Aula06.pdf)
+- [Aula 04 (PDF)](../pdfs/portugues/Aula07.pdf)
+- [Aula 05 (PDF)](../pdfs/portugues/Aula10.pdf)
+- [Aula 06 (PDF)](../pdfs/portugues/Aula13.pdf)
 
 ---
 
