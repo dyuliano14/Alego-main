@@ -15,13 +15,13 @@
 ---
 
 ### 📄 PDFs
-- [Aula 00 (PDF)](../pdfs/portugues/Aula00.pdf)
-- [Aula 01 (PDF)](../pdfs/portugues/Aula02-Conjunções.pdf)
+- [Aula 00 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula00.pdf)
+- [Aula 01 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula02-Conjun%C3%A7%C3%B5es.pdf)
 - [Aula 02 (PDF)](https://github.com/dyuliano14/Alego-main/blame/26f83647072ca41b7ce53fd174897ef0e89c43ad/docs/portugues/Aula04.pdf)
-- [Aula 03 (PDF)](../pdfs/portugues/Aula06.pdf)
-- [Aula 04 (PDF)](../pdfs/portugues/Aula07.pdf)
-- [Aula 05 (PDF)](../pdfs/portugues/Aula10.pdf)
-- [Aula 06 (PDF)](../pdfs/portugues/Aula13.pdf)
+- [Aula 03 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula06.pdf)
+- [Aula 04 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula07.pdf)
+- [Aula 05 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula10.pdf)
+- [Aula 06 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula13.pdf)
 
 ---
 
