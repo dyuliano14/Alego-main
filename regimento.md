@@ -131,45 +131,27 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula00.pdf" target="_blank" download>
+  <a href="docs/pdfs/regimento/RESOLUÇÃO Nº 1.073.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
       Aula 00
     </button>
   </a>
 
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula02-Conjunções.pdf" target="_blank" download>
+  <a href="docs/pdfs/regimento/Regimento Interno Alego - RESOLUÇÃO N° 1.218.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
       Aula 01 - Conjunções
     </button>
   </a>
 
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula04.pdf" target="_blank" download>
+  <a href="docs/pdfs/regimento/Resolução nº 1.007.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
       Aula 02
     </button>
   </a>
 
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula06.pdf" target="_blank" download>
+  <a href="docs/pdfs/regimento/Resolução 1771 - Secretaria de Polícia Legislativa.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
       Aula 03
-    </button>
-  </a>
-
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula07.pdf" target="_blank" download>
-    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 04
-    </button>
-  </a>
-
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula10.pdf" target="_blank" download>
-    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 05
-    </button>
-  </a>
-
-  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula13.pdf" target="_blank" download>
-    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 06
     </button>
   </a>
 
