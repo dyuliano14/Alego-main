@@ -8,16 +8,18 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
     Semana 01  
     Gramática Básica
   </button>
-  
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 01</h3>
     <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
   </div>
+  </div>
 
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
     Semana 02 
     Conjunções
@@ -26,7 +28,9 @@
     <h3 style="margin-top: 0;">🔗 Semana 02</h3>
     <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
   </div>
+  </div>
 
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
     Semana 03
     Interpretação de Texto
@@ -35,17 +39,20 @@
     <h3 style="margin-top: 0;">🔗 Semana 03</h3>
     <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
   </div>
+  </div>
 
- <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
     Semana 04
     Gramática Básica
-  </button>
-  
-   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
+   </button>
+     <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 01</h3>
     <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
   </div>
+  </div>
 
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
     Semana 05 
     Conjunções
@@ -54,7 +61,9 @@
     <h3 style="margin-top: 0;">🔗 Semana 02</h3>
     <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
   </div>
+  </div>
 
+  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
     Semana 06 
     Interpretação de Texto
@@ -62,6 +71,7 @@
    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">🔗 Semana 03</h3>
     <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
+  </div>
   </div>
 </div>
 ---
