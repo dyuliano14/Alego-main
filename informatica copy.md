@@ -1,6 +1,6 @@
-# 📚 Outras matétrias
+# 📚 Informática
 
-> Repositório de materiais para estudo da disciplina de **Outras matérias**  
+> Repositório de materiais para estudo da disciplina de **Informática**  
 > Aprender é compartilhar! 🚀
 
 ---
@@ -31,7 +31,7 @@
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
-  <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
+  <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px"";>
     Semana 03
     Interpretação de Texto
   </button>
@@ -214,98 +214,70 @@
   </a>
 
 </div>
----
-
+<!-- PROGRESSO DE ESTUDOS -->
 <div id="study-progress">
   <h3>📘 Progresso de Estudos</h3>
   <ul id="study-checklist">
-  <li>
-    Aula 00:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 01:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 02:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 03:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 04:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 05:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 06:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 07:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 08:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-   <li>
-    Aula 09:
-    <label><input type="checkbox" data-id="aula00-estudo"> Leitura</label>
-    <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
-    <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
-  </li>
-  <!-- Repita para outras aulas -->
-</ul>
+    <li>Aula 00:
+      <label><input type="checkbox" data-id="aula00-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula00-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula00-flash"> Flashcards</label>
+    </li>
+    <li>Aula 01:
+      <label><input type="checkbox" data-id="aula01-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula01-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula01-flash"> Flashcards</label>
+    </li>
+    <li>Aula 02:
+      <label><input type="checkbox" data-id="aula02-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula02-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula02-flash"> Flashcards</label>
+    </li>
+    <li>Aula 03:
+      <label><input type="checkbox" data-id="aula03-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula03-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula03-flash"> Flashcards</label>
+    </li>
+    <li>Aula 04:
+      <label><input type="checkbox" data-id="aula04-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula04-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula04-flash"> Flashcards</label>
+    </li>
+    <li>Aula 05:
+      <label><input type="checkbox" data-id="aula05-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula05-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula05-flash"> Flashcards</label>
+    </li>
+    <li>Aula 06:
+      <label><input type="checkbox" data-id="aula06-leitura"> Leitura</label>
+      <label><input type="checkbox" data-id="aula06-resumo"> Resumo</label>
+      <label><input type="checkbox" data-id="aula06-flash"> Flashcards</label>
+    </li>
+  </ul>
 
+  <!-- Barra de Progresso -->
   <div class="progress-container">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
 </div>
 
+<!-- ESTILO VISUAL -->
 <style>
   #study-progress {
-    margin: 20px 0;
+    margin: 30px 0;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    background: #fdfdfd;
+  }
+
+  #study-progress h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
   }
 
   .progress-container {
-    margin-top: 15px;
+    margin-top: 20px;
     width: 100%;
     background: #eee;
     height: 20px;
@@ -326,33 +298,32 @@
   }
 
   #study-checklist li {
-    margin: 8px 0;
-  }
-  <style>
-  #study-checklist li {
-    margin: 8px 0;
+    margin: 12px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 1rem;
   }
 
   #study-checklist label {
-    background: #eee;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    background: #e9e9e9;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s;
   }
 
   #study-checklist label:hover {
-    background: #ddd;
+    background: #d4d4d4;
+  }
+
+  #study-checklist input[type='checkbox'] {
+    margin-right: 5px;
   }
 </style>
 
-</style>
-
+<!-- FUNCIONALIDADE -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const checkboxes = document.querySelectorAll("#study-checklist input[type='checkbox']");
