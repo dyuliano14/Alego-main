@@ -17,7 +17,7 @@
 ### 📄 PDFs
 - [Aula 00 (PDF)](../pdfs/portugues/Aula00.pdf)
 - [Aula 01 (PDF)](../pdfs/portugues/Aula02-Conjunções.pdf)
-- [Aula 02 (PDF)](docs/pdfs/portugues/Aula04.pdf)
+- [Aula 02 (PDF)](https://dyuliano14.github.io/docs/pdfs/portugues/Aula04.pdf))
 - [Aula 03 (PDF)](../pdfs/portugues/Aula06.pdf)
 - [Aula 04 (PDF)](../pdfs/portugues/Aula07.pdf)
 - [Aula 05 (PDF)](../pdfs/portugues/Aula10.pdf)
