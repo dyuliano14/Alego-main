@@ -7,10 +7,23 @@
 
 ## 📂 Conteúdo
 
-### 🔖 Flashcards
-- [Ortografia - Flashcards](../portugues/flashcards/ortografia.html)
-- [Gramática - Flashcards](../portugues/flashcards/gramatica.html)
-- [Interpretação de Texto - Flashcards](../portugues/flashcards/interpretacao.html)
+<h2>🧠 Flashcards</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+
+  <a href="https://dyuliano14.github.io/Alego-main/flashcards/portugues/flashcard01.html" target="_blank">
+    <button style="padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Flashcard 01
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/flashcards/portugues/flashcard02.html" target="_blank">
+    <button style="padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Flashcard 02
+    </button>
+  </a>
+
+</div>
 
 ---
 
@@ -64,10 +77,23 @@
 
 ---
 
-### 📝 Resumos em Markdown
-- [Resumo de Ortografia](../portugues/resumos/ortografia.md)
-- [Resumo de Gramática](../portugues/resumos/gramatica.md)
-- [Resumo de Redação](../portugues/resumos/redacao.md)
+<h2>📝 Resumos</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+
+  <a href="https://dyuliano14.github.io/Alego-main/resumos/portugues/resumo01.md" target="_blank">
+    <button style="padding: 10px 20px; background-color: #2196f3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Resumo 01
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/resumos/portugues/resumo02.md" target="_blank">
+    <button style="padding: 10px 20px; background-color: #2196f3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Resumo 02
+    </button>
+  </a>
+
+</div>
 
 ---
 
