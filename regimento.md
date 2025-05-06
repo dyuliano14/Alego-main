@@ -133,25 +133,25 @@
 
   <a href="docs/pdfs/regimento/RESOLUÇÃO Nº 1.073.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 00
+      - Resolução nº 1.073
     </button>
   </a>
 
   <a href="docs/pdfs/regimento/Regimento Interno Alego - RESOLUÇÃO N° 1.218.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 01 - Conjunções
+      - Resolução nº 1.218
     </button>
   </a>
 
   <a href="docs/pdfs/regimento/Resolução nº 1.007.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 02
+      - Resolução nº 1.007
     </button>
   </a>
 
   <a href="docs/pdfs/regimento/Resolução 1771 - Secretaria de Polícia Legislativa.pdf" target="_blank" download>
     <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Aula 03
+      - Resolução 1771
     </button>
   </a>
 
