@@ -1,6 +1,6 @@
-# 📚 Português
+# 📚 Segurança Pública
 
-> Repositório de materiais para estudo da disciplina de **Português**  
+> Repositório de materiais para estudo da disciplina de **Segurança Pública**  
 > Aprender é compartilhar! 🚀
 
 ---
@@ -8,19 +8,19 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color:rgb(213, 213, 190);">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
     Semana 01  
     Gramática Básica
   </button>
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color:rgb(249, 249, 249);">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 01</h3>
     <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
   </div>
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
-    <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px"";>
+    <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
     Semana 02 </b>
     Conjunções
   </button>
