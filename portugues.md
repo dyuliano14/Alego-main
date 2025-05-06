@@ -121,54 +121,31 @@
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
     Semana 01 – Gramática Básica
   </button>
-
-  <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
-    Semana 02 – Conjunções
-  </button>
-
-  <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
-    Semana 03 – Interpretação de Texto
-  </button>
-
-</div>
----
----
-<h2>📅 Planejamento de Estudos</h2>
-
-<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 01</h3>
     <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
   </div>
 
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
+  <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
+    Semana 02 – Conjunções
+  </button>
+   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">🔗 Semana 02</h3>
+    <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
+  </div>
+
+  <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
+    Semana 03 – Interpretação de Texto
+  </button>
+   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0;">🔗 Semana 03</h3>
     <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
   </div>
 
 </div>
 ---
----
-<h2>📅 Planejamento de Estudos</h2>
 
-<div style="display: flex; align-items: center; gap: 40px; margin-top: 20px; overflow-x: auto;">
 
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #4caf50; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">S1</div>
-    <p>Gramática</p>
-  </div>
-
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #2196f3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">S2</div>
-    <p>Conjunções</p>
-  </div>
-
-  <div style="text-align: center;">
-    <div style="width: 80px; height: 80px; background-color: #f44336; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">S3</div>
-    <p>Texto</p>
-  </div>
-
-</div>
----
 **Voltar ao [Início](../index.html)** 🔙
