@@ -3,7 +3,6 @@
 > Repositório de materiais para estudo da disciplina de **Outras matérias**  
 > Aprender é compartilhar! 🚀
 
----
 <h2>📅 Planejamento de Estudos</h2>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
@@ -103,7 +102,6 @@
   </div>
   </div>
 </div>
----
 
 ## 📂 Conteúdo
 
