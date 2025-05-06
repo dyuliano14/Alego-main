@@ -14,14 +14,53 @@
 
 ---
 
-### 📄 PDFs
-- [Aula 00 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula00.pdf)
-- [Aula 01 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula02-Conjun%C3%A7%C3%B5es.pdf)
-- [Aula 02 (PDF)](https://github.com/dyuliano14/Alego-main/blame/26f83647072ca41b7ce53fd174897ef0e89c43ad/docs/portugues/Aula04.pdf)
-- [Aula 03 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula06.pdf)
-- [Aula 04 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula07.pdf)
-- [Aula 05 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula10.pdf)
-- [Aula 06 (PDF)](https://github.com/dyuliano14/Alego-main/blob/26f83647072ca41b7ce53fd174897ef0e89c43ad/pdfs/portugues/Aula13.pdf)
+<h2>📄 Aulas em PDF</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula00.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 00
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula02-Conjunções.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 01 - Conjunções
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula04.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 02
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula06.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 03
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula07.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 04
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula10.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 05
+    </button>
+  </a>
+
+  <a href="https://dyuliano14.github.io/Alego-main/pdfs/portugues/Aula13.pdf" target="_blank" download>
+    <button style="padding: 10px 20px; background-color: #f57c00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Aula 06
+    </button>
+  </a>
+
+</div>
 
 ---
 
