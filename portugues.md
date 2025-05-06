@@ -8,7 +8,7 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
     Semana 01  
     Gramática Básica
@@ -19,7 +19,7 @@
   </div>
   </div>
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
     Semana 02 
     Conjunções
@@ -30,7 +30,7 @@
   </div>
   </div>
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
     Semana 03
     Interpretação de Texto
@@ -41,7 +41,7 @@
   </div>
   </div>
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px;">
     Semana 04
     Gramática Básica
@@ -52,7 +52,7 @@
   </div>
   </div>
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px;">
     Semana 05 
     Conjunções
@@ -63,7 +63,7 @@
   </div>
   </div>
 
-  <div> style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 400px; background-color: #f9f900;">
   <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px;">
     Semana 06 
     Interpretação de Texto
