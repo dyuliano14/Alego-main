@@ -5,61 +5,57 @@
 
 ---
 <h2>📅 Planejamento de Estudos</h2>
+<h2>➗ Divisão da Resolução nº 1.218 em partes</h2>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
   <button style="padding: 10px 20px; background-color: #ff9800; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
-    Semana 01  
-    Gramática Básica
+    Regimento Interno 1.218 - 1º
   </button>
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 01</h3>
-    <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
+    <p>Título I - Disposições Preliminares (Art. 1º ao 8º)</p>
   </div>
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
     <button style="padding: 10px 20px; background-color: #673ab7; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
-    Semana 02 </b>
-    Conjunções
+     Regimento Interno 1.218 - 2º
   </button>
    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">🔗 Semana 02</h3>
-    <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
+    <p>Título II - Órgãos da Assembleia (Art. 9º ao 67)</p>
   </div>
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
   <button style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
-    Semana 03
-    Interpretação de Texto
+    Regimento Interno 1.218 - 3º
   </button>
    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">🔗 Semana 03</h3>
-    <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
+    <p>Título III e IV - Processo Legislativo e Deliberações (Art. 68 ao 110)</p>
   </div>
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
   <button style="padding: 10px; background-color:rgba(0, 60, 255, 0.88); color: white; border: none; border-radius: 5px; margin: 10px 0px 10px 0px";>
-    Semana 04
-    Gramática Básica
+    Regimento Interno 1.218 - 4º
    </button>
      <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">📘 Semana 04</h3>
-    <p>Estudo de gramática básica com foco em pronomes, verbos e estrutura da frase.</p>
+    <p>Título V - Elaboração Legislativa (Art. 111 ao 142)</p>
   </div>
   </div>
 
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
   <button style="padding: 10px 20px; background-color:rgb(216, 18, 18); color: white; border: none; border-radius: 5px; margin: 0px 0px 10px 0px";>
-    Semana 05
-    Conjunções
+    Regimento Interno 1.218 - 5º
   </button>
    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; width: 300px; background-color: #f9f9f9;">
     <h3 style="margin-top: 0;">🔗 Semana 05</h3>
-    <p>Conjunções e conectivos: como estruturar melhor a coesão textual.</p>
+    <p>Título VI a XII - Disposições Finais (Art. 143 ao 225)</p>
   </div>
   </div>
 <div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 360px; background-color: #ccccb7;">
