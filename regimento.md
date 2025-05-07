@@ -107,9 +107,9 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
-  <a href="https://dyuliano14.github.io/Alego-main/flashcards/portugues/flashcard01.html" target="_blank">
+  <a href="flashcards.1218.html" target="_blank">
     <button style="padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Flashcard 01
+      1º parte da resolução 1.218 
     </button>
   </a>
 
