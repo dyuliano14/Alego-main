@@ -159,9 +159,9 @@
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
 
-  <a href="https://dyuliano14.github.io/Alego-main/resumos/portugues/resumo01.md" target="_blank">
+  <a href="docs/resumos/resolucao_1218.md" target="_blank">
     <button style="padding: 10px 20px; background-color: #2196f3; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Resumo 01
+      Resolução nº 1.218
     </button>
   </a>
 
