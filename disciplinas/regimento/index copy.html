@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regimento Interno - Estudo ALEGO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <!-- Aqui serão carregados os módulos dinamicamente -->
+    <div id="header"></div>
+    <main>
+        <div id="progressao"></div>
+        <div id="planejamento"></div>
+        <div id="aulas"></div>
+        <div id="resumos"></div>
+        <div id="flashcard-container"></div>
+        <div id="apresentacoes"></div>
+    </main>
+    <div id="footer"></div>
+
+    <script>
+        const componentes = [
+            ["header", "../../modulos/header.html"],
+            ["progressao", "../../modulos/progressao.html"],
+            ["planejamento", "./planejamento.html"],
+            ["aulas", "./aulas.html"],
+            ["resumos", "./resumos.html"],
+            ["flashcard-container", "./flashcards.html"],
+            ["apresentacoes", "./apresentacoes.html"],
+            ["footer", "../../modulos/footer.html"]
+        ];
+
+        componentes.forEach(([id, url]) => {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                })
+                .catch(err => {
+                    console.error(`Erro ao carregar ${url}:`, err);
+                });
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
