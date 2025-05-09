@@ -165,7 +165,7 @@
     cursor: pointer;
 }
 
-#controles .bt_aula .button:hover {
+#controles .button:hover .bt_aula {
     background-color: #826539;
 }
 

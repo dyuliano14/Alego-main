@@ -2,21 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #95d5b2;
+  /* For browsers that do not support gradients */
+  background-image: radial-gradient(#a0c2ba, #cad2c5);
+
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-around;
   background-color: #1e1e2f;
-  padding: 15px;
-  text-align: center;
+  padding: 15px 0;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 10;
+
 }
 
 .navbar nav a {
@@ -40,6 +45,7 @@ h2 {
   margin: 20px 0;
   text-align: center;
 }
+
 
 .intro {
   text-align: center;
@@ -94,49 +100,24 @@ h2 {
 }
 
 .footer-basic {
-
-  background-color: #d9d9d9;
+  background-color: #95d5b2;
+  /* For browsers that do not support gradients */
+  background-image: radial-gradient(#bacbc7, #cad2c5);
   color: #4b4c4d;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
 }
 
-.footer-basic .social {
-  text-align: center;
-  padding-bottom: 0;
-}
-
-.footer-basic .social>a {
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  margin: 0 8px;
-  color: inherit;
-  opacity: 0.75;
-}
-
-.footer-basic .social>a:hover .logo_dyu {
-  opacity: 0.9;
-}
-
-.footer-basic .copyright {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 13px;
-  color: #000000;
-  margin-bottom: 0;
-}
 
 .footer-basic>footer {
   display: flex;
   flex-direction: column;
+  align-content: ;
   /* Alinha os itens em coluna */
   align-items: center;
   /* Centraliza horizontalmente os itens */
-  padding: 20px;
+  padding: 70px;
   text-align: center;
   /* Centraliza o texto dentro dos elementos */
 }
@@ -147,6 +128,7 @@ h2 {
   /* Alinha verticalmente o logo, separador e copyright */
   margin-bottom: 20px;
   /* Adiciona espaço entre a linha superior e inferior */
+  border-radius: 5%;
 }
 
 .logo_dyu img {
@@ -158,6 +140,7 @@ h2 {
   /* Ajuste conforme necessário */
   margin-right: -10px;
   /* Espaço à direita do logo */
+
 }
 
 .logo_dyu .separator {
@@ -165,8 +148,9 @@ h2 {
   /* Espaço ao redor da barra vertical */
   font-size: 1.2em;
   /* Ajuste o tamanho da barra, se necessário */
-  color: #ccc;
+  color: #494b4a;
   /* Cor da barra */
+
 }
 
 .logo_dyu p.copyright {
@@ -195,11 +179,34 @@ h2 {
 .social .separator {
   font-size: 1.2em;
   /* Ajuste o tamanho da barra */
-  color: #ccc;
+  color: #494b4a;
   /* Cor da barra */
 }
 
 /* Oculta a barra no final da lista de redes sociais (opcional) */
 .social a:last-child+.separator {
   display: none;
+}
+
+.cabeca {
+  background-color: #95d5b2;
+  /* For browsers that do not support gradients */
+  background-image: radial-gradient(#bacbc7, #cad2c5);
+  color: #4b4c4d;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.cabeca>header {
+  display: flex;
+  flex-direction: column;
+  /* Alinha os itens em coluna */
+  align-items: center;
+  /* Centraliza horizontalmente os itens */
+
+  text-align: center;
+  /* Centraliza o texto dentro dos elementos */
+  padding: 40px;
 }
