@@ -1,30 +1,32 @@
 // script.js
 
-// Código do planejamento
-(function () {
-    const checkboxes = document.querySelectorAll(".tarefa");
-    const progresso = document.getElementById("progresso");
+function iniciarPlanejamento() {
+  const checkboxes = document.querySelectorAll(".tarefa");
+  const progresso = document.getElementById("progresso");
 
-    function atualizarProgresso() {
-        const total = checkboxes.length;
-        const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
-        const percentual = (marcadas / total) * 100;
-        progresso.value = percentual;
-        localStorage.setItem("progresso_regimento", percentual);
-        checkboxes.forEach((cb, idx) => {
-            localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
-        });
-    }
+  if (!checkboxes.length || !progresso) return;
 
-    checkboxes.forEach((cb, idx) => {
-        cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
-        cb.addEventListener("change", atualizarProgresso);
-    });
+  function atualizarProgresso() {
+  const total = checkboxes.length;
+  const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
+  const percentual = Math.round((marcadas / total) * 100);
 
-    const progressoSalvo = localStorage.getItem("progresso_regimento");
-    if (progressoSalvo) progresso.value = progressoSalvo;
-})();
+  progresso.value = percentual;
+  document.getElementById("percentual").textContent = `${percentual}%`;
 
+  localStorage.setItem("progresso_regimento", percentual);
+  checkboxes.forEach((cb, idx) => {
+    localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
+  });
+}
+  checkboxes.forEach((cb, idx) => {
+    cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
+    cb.addEventListener("change", atualizarProgresso);
+  });
+
+  const progressoSalvo = localStorage.getItem("progresso_regimento");
+  if (progressoSalvo) progresso.value = progressoSalvo;
+}
 // Código dos flashcards
 (function () {
     const flashcards = [
@@ -91,3 +93,13 @@
     // Inicialização
     exibirFlashcard(indiceAtual);
 })();
+
+function myFunction() {
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+
