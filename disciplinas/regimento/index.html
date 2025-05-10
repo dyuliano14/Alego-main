@@ -8,6 +8,8 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 
 <body>
@@ -47,9 +49,16 @@
             ["footer", "../../modulos/footer.html"]
         ];
 
-        componentes.forEach(([id, url]) => carregarComponente(id, url));
+        componentes.forEach(([id, url]) => {
+  carregarComponente(id, url).then(() => {
+    if (id === "planejamento") iniciarPlanejamento(); // Executa só quando for o bloco certo
+  });
+});
     </script>
-    <script src="script.js"></script>
-</body>
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    
+ </body>
 
 </html>
