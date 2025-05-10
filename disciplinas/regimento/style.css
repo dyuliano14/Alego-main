@@ -20,6 +20,23 @@
 
 }
 
+.modulo-box {
+  background: linear-gradient(to top left, #ffffff, #e0f7fa);
+  border: 1px solid #ddd;
+  padding: 2rem;
+  margin: 3rem auto;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+.modulo-box h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
 
 /* Título */
 #flashcard-container h2 {
@@ -145,7 +162,6 @@
     border-radius: 8px;
     max-width: 600px;
     margin-inline: auto;
-    margin-bottom: 5rem;
 }
 
 .aula_pdf h2 {
@@ -165,10 +181,9 @@
     cursor: pointer;
 }
 
-#controles .bt_aula .button:hover {
-    background-color: #826539;
+#controles .bt_aula:hover {
+    background-color: #ff9900e3
 }
-
 .apresentacoes {
     background: #fdfdfd;
     border: 1px solid #ddd;
@@ -186,19 +201,23 @@
     margin-bottom: 1rem;
 }
 
-.bt_apresentacoes {
+
+#controles .bt_apresentacoes {
     padding: 10px 20px;
+    font-size: 16px;
     background-color: #08c828d1;
     color: white;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
     margin: 0px 0px 10px 0px;
-    margin-inline: auto;
-
+    cursor: pointer;
 }
 
-.resumos {
+#controles .bt_apresentacoes:hover {
+    background-color: #08c828c2;
+}
+
+.resumos{
     background: #fdfdfd;
     border: 1px solid #ddd;
     padding: 1.5rem;
@@ -216,12 +235,28 @@
 
 .bt_resumo {
     padding: 10px 20px;
-    background-color: #2196f3;
+    background-color: #9f21f3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin: 0px 0px 10px 0px;
+}
+
+
+#controles .bt_resumo {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #9f21f3;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0px 0px 10px 0px;
+    cursor: pointer;
+}
+
+#controles .bt_resumo:hover {
+    background-color: #9f21f3d2;
 }
 
 .tarefa-lista {
@@ -261,6 +296,44 @@
 .caixa h2 {
     text-align: center;
 }
+
+.progresso-container {
+  margin: 30px 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.barra-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#progresso {
+  width: 300px;
+  height: 25px;
+  appearance: none;
+}
+
+#progresso::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+#progresso::-webkit-progress-value {
+  background-image: linear-gradient(to right, #0d6efd, #0dcaf0);
+  border-radius: 8px;
+}
+
+#percentual {
+  font-weight: bold;
+  min-width: 50px;
+  color: #0d6efd;
+}
+
 
 header h1,
 h2,
