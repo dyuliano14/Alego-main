@@ -126,7 +126,7 @@ async function carregarAulas() {
   try {
     const response = await client.getEntries({
       content_type: 'disciplina',
-      'fields.categoria': 'regimento-interno',
+      'fields.categoria': 'regimento',
       order: 'fields.ordem' // organiza por ordem crescente
     });
 
