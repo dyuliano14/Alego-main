@@ -94,23 +94,6 @@ function iniciarPlanejamento() {
     exibirFlashcard(indiceAtual);
 })();
 
-function myFunction() {
-  var x = document.getElementById("myNavbar");
-  if (x.className === "navbar") {
-    x.className += " responsive";
-  } else {
-    x.className = "navbar";
-  }
-}
-const spaceId = 'SEU_SPACE_ID';
-const accessToken = 'SEU_ACCESS_TOKEN';
-
-async function fetchContent() {
-  const res = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${accessToken}`);
-  const data = await res.json();
-  console.log(data); // Verifique o que vem da API
-}
-
 fetchContent();
 
 // contefull
@@ -169,3 +152,11 @@ function renderizarAulas(aulas) {
 }
 // Chamar a função quando a página carregar
 document.addEventListener('DOMContentLoaded', carregarAulas);
+
+componentes.forEach(([id, url]) => {
+  carregarComponente(id, url).then(() => {
+    if (id === "planejamento") iniciarPlanejamento();
+    if (id === "aulas") carregarAulas(); // ← aqui é o pulo do gato
+  });
+});
+
