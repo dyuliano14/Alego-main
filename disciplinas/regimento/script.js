@@ -113,28 +113,55 @@ async function fetchContent() {
 
 fetchContent();
 
-// disciplinas/regimento-interno/script.js
+// contefull
 
+// Configuração inicial da API do Contentful
 const client = contentful.createClient({
-  space: 'SEU_SPACE_ID',
-  accessToken: 'SEU_ACCESS_TOKEN'
+  space: 'cvwlultzovzs', // ← substitua aqui
+  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0' // ← substitua aqui
 });
 
-client.getEntries({ content_type: 'disciplina', 'fields.categoria': 'regimento' })
-  .then(response => {
-    renderDisciplinas(response.items);
-  });
+// Função que busca as aulas do Contentful
+async function carregarAulas() {
+  try {
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento-interno',
+      order: 'fields.ordem' // organiza por ordem crescente
+    });
 
-function renderDisciplinas(disciplinas) {
+    renderizarAulas(response.items);
+  } catch (erro) {
+    console.error('Erro ao carregar disciplinas:', erro);
+  }
+}
+
+// Função que insere o conteúdo no HTML
+function renderizarAulas(aulas) {
   const container = document.getElementById('conteudo-dinamico');
-  disciplinas.forEach(item => {
-    const { titulo, descricao, linkPdf } = item.fields;
-    const div = document.createElement('div');
-    div.innerHTML = `
+  container.innerHTML = ''; // limpa antes de preencher
+
+  if (aulas.length === 0) {
+    container.innerHTML = '<p>Nenhuma aula encontrada.</p>';
+    return;
+  }
+
+  aulas.forEach(item => {
+    const { titulo, descricao, linkPdf, tipo } = item.fields;
+
+    const bloco = document.createElement('div');
+    bloco.classList.add('aula-bloco');
+
+    bloco.innerHTML = `
       <h2>${titulo}</h2>
+      <p><strong>Tipo:</strong> ${tipo}</p>
       <p>${descricao}</p>
-      <a href="${linkPdf}" target="_blank">Acessar PDF</a>
+      <a href="${linkPdf}" target="_blank">📄 Acessar PDF</a>
     `;
-    container.appendChild(div);
+
+    container.appendChild(bloco);
   });
 }
+
+// Chamar a função quando a página carregar
+document.addEventListener('DOMContentLoaded', carregarAulas);
