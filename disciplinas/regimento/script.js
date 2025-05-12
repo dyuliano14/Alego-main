@@ -113,3 +113,28 @@ async function fetchContent() {
 
 fetchContent();
 
+// disciplinas/regimento-interno/script.js
+
+const client = contentful.createClient({
+  space: 'SEU_SPACE_ID',
+  accessToken: 'SEU_ACCESS_TOKEN'
+});
+
+client.getEntries({ content_type: 'disciplina', 'fields.categoria': 'regimento' })
+  .then(response => {
+    renderDisciplinas(response.items);
+  });
+
+function renderDisciplinas(disciplinas) {
+  const container = document.getElementById('conteudo-dinamico');
+  disciplinas.forEach(item => {
+    const { titulo, descricao, linkPdf } = item.fields;
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <h2>${titulo}</h2>
+      <p>${descricao}</p>
+      <a href="${linkPdf}" target="_blank">Acessar PDF</a>
+    `;
+    container.appendChild(div);
+  });
+}
