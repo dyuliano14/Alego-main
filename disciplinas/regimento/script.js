@@ -136,10 +136,9 @@ async function carregarAulas() {
   }
 }
 
-// Função que insere o conteúdo no HTML
 function renderizarAulas(aulas) {
-  const container = document.getElementById('conteudo-dinamico');
-  container.innerHTML = ''; // limpa antes de preencher
+  const container = document.getElementById('aulas'); // usa o ID correto da página
+  container.innerHTML = '';
 
   if (aulas.length === 0) {
     container.innerHTML = '<p>Nenhuma aula encontrada.</p>';
@@ -147,21 +146,26 @@ function renderizarAulas(aulas) {
   }
 
   aulas.forEach(item => {
-    const { titulo, descricao, linkPdf, tipo } = item.fields;
+    const { titulo, descricao, pdfoulink } = item.fields;
+
+    // Se descrição for Rich Text (caso ainda esteja assim no Contentful)
+    const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Sem descrição.';
+
+    const urlArquivo = pdfoulink?.fields?.file?.url
+      ? `https:${pdfoulink.fields.file.url}`
+      : '#';
 
     const bloco = document.createElement('div');
     bloco.classList.add('aula-bloco');
 
     bloco.innerHTML = `
       <h2>${titulo}</h2>
-      <p><strong>Tipo:</strong> ${tipo}</p>
-      <p>${descricao}</p>
-      <a href="${linkPdf}" target="_blank">📄 Acessar PDF</a>
+      <p>${descricaoTexto}</p>
+      <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
     `;
 
     container.appendChild(bloco);
   });
 }
-
 // Chamar a função quando a página carregar
 document.addEventListener('DOMContentLoaded', carregarAulas);
