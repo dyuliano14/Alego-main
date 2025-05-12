@@ -7,26 +7,34 @@ function iniciarPlanejamento() {
   if (!checkboxes.length || !progresso) return;
 
   function atualizarProgresso() {
-  const total = checkboxes.length;
-  const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
-  const percentual = Math.round((marcadas / total) * 100);
+    const total = checkboxes.length;
+    const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
+    const percentual = Math.round((marcadas / total) * 100);
 
-  progresso.value = percentual;
-  document.getElementById("percentual").textContent = `${percentual}%`;
+    progresso.value = percentual;
+    document.getElementById("percentual").textContent = `${percentual}%`;
 
-  localStorage.setItem("progresso_regimento", percentual);
-  checkboxes.forEach((cb, idx) => {
-    localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
-  });
-}
+    localStorage.setItem("progresso_regimento", percentual);
+    checkboxes.forEach((cb, idx) => {
+      localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
+    });
+  }
+
   checkboxes.forEach((cb, idx) => {
     cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
     cb.addEventListener("change", atualizarProgresso);
   });
 
   const progressoSalvo = localStorage.getItem("progresso_regimento");
-  if (progressoSalvo) progresso.value = progressoSalvo;
+  if (progressoSalvo) {
+    progresso.value = progressoSalvo;
+    document.getElementById("percentual").textContent = `${progressoSalvo}%`;
+  }
+
+  // Atualiza na carga inicial
+  atualizarProgresso();
 }
+
 // Código dos flashcards
 (function () {
     const flashcards = [
