@@ -97,33 +97,33 @@ function iniciarPlanejamento() {
 fetchContent();
 
 // contefull
-
-// Configuração inicial da API do Contentful
+// Contentful - Conexão
 const client = contentful.createClient({
-  space: 'cvwlultzovzs', // ← substitua aqui
-  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0' // ← substitua aqui
+  space: 'cvwlultzovzs',
+  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
 });
 
-// Função que busca as aulas do Contentful
+// Função para carregar as aulas de Regimento Interno
 async function carregarAulas() {
   try {
     const response = await client.getEntries({
       content_type: 'disciplina',
       'fields.categoria': 'regimento',
-      order: 'fields.ordem' // organiza por ordem crescente
+      order: 'fields.ordem'
     });
 
     renderizarAulas(response.items);
   } catch (erro) {
-    console.error('Erro ao carregar disciplinas:', erro);
+    console.error('Erro ao buscar aulas:', erro);
   }
 }
 
+// Renderiza os blocos no container #aulas
 function renderizarAulas(aulas) {
-  const container = document.getElementById('aulas'); // usa o ID correto da página
+  const container = document.getElementById('aulas');
   container.innerHTML = '';
 
-  if (aulas.length === 0) {
+  if (!aulas.length) {
     container.innerHTML = '<p>Nenhuma aula encontrada.</p>';
     return;
   }
@@ -131,18 +131,19 @@ function renderizarAulas(aulas) {
   aulas.forEach(item => {
     const { titulo, descricao, pdfoulink } = item.fields;
 
-    // Se descrição for Rich Text (caso ainda esteja assim no Contentful)
-    const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Sem descrição.';
+    // Pegando descrição Rich Text de forma segura
+    const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Descrição não disponível.';
 
+    // PDF link
     const urlArquivo = pdfoulink?.fields?.file?.url
       ? `https:${pdfoulink.fields.file.url}`
       : '#';
 
     const bloco = document.createElement('div');
-    bloco.classList.add('aula-bloco');
+    bloco.className = 'aula-bloco';
 
     bloco.innerHTML = `
-      <h2>${titulo}</h2>
+      <h3>${titulo}</h3>
       <p>${descricaoTexto}</p>
       <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
     `;
@@ -150,13 +151,5 @@ function renderizarAulas(aulas) {
     container.appendChild(bloco);
   });
 }
-// Chamar a função quando a página carregar
-document.addEventListener('DOMContentLoaded', carregarAulas);
 
-componentes.forEach(([id, url]) => {
-  carregarComponente(id, url).then(() => {
-    if (id === "planejamento") iniciarPlanejamento();
-    if (id === "aulas") carregarAulas(); // ← aqui é o pulo do gato
-  });
-});
 
