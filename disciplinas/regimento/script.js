@@ -102,4 +102,14 @@ function myFunction() {
     x.className = "navbar";
   }
 }
+const spaceId = 'SEU_SPACE_ID';
+const accessToken = 'SEU_ACCESS_TOKEN';
+
+async function fetchContent() {
+  const res = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${accessToken}`);
+  const data = await res.json();
+  console.log(data); // Verifique o que vem da API
+}
+
+fetchContent();
 
