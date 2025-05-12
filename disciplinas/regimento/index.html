@@ -51,7 +51,8 @@
 
         componentes.forEach(([id, url]) => {
   carregarComponente(id, url).then(() => {
-    if (id === "planejamento") iniciarPlanejamento(); // Executa só quando for o bloco certo
+    if (id === "planejamento") iniciarPlanejamento();
+    if (id === "aulas") carregarAulas(); // Só roda quando o HTML de aulas estiver injetado
   });
 });
     </script>
