@@ -4,19 +4,34 @@ const client = contentful.createClient({
   accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
 });
 
+console.log("✅ Contentful client inicializado");
+
 // ✅ FUNÇÃO: Carregar Aulas
 async function carregarAulas() {
   try {
-    client.getEntries({
+    console.log("🔄 Buscando aulas...");
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'aula',
+      order: 'fields.ordem'
+    });
 
+    console.log(`📚 ${response.items.length} aulas recebidas`);
     renderizarAulas(response.items);
   } catch (erro) {
-    console.error('Erro ao buscar aulas:', erro);
+    console.error('❌ Erro ao buscar aulas:', erro);
   }
 }
 
+// ✅ RENDERIZAÇÃO: Aulas
 function renderizarAulas(aulas) {
   const container = document.getElementById('aulas');
+  if (!container) {
+    console.warn("⚠️ Container #aulas não encontrado");
+    return;
+  }
+
   container.innerHTML = '';
 
   if (!aulas.length) {
@@ -48,6 +63,7 @@ function renderizarAulas(aulas) {
 // ✅ FUNÇÃO: Carregar Planejamento
 async function carregarPlanejamento() {
   try {
+    console.log("🔄 Buscando planejamento...");
     const response = await client.getEntries({
       content_type: 'disciplina',
       'fields.categoria': 'regimento',
@@ -55,7 +71,13 @@ async function carregarPlanejamento() {
       order: 'fields.ordem'
     });
 
+    console.log(`✅ ${response.items.length} tarefas encontradas`);
     const container = document.getElementById('lista-tarefas');
+    if (!container) {
+      console.warn("⚠️ Container #lista-tarefas não encontrado");
+      return;
+    }
+
     container.innerHTML = '';
 
     response.items.forEach((item, idx) => {
@@ -80,16 +102,19 @@ async function carregarPlanejamento() {
 
     iniciarPlanejamento();
   } catch (erro) {
-    console.error('Erro ao carregar planejamento:', erro);
+    console.error('❌ Erro ao carregar planejamento:', erro);
   }
 }
 
-// ✅ FUNÇÃO: Planejamento LocalStorage
+// ✅ FUNÇÃO: Planejamento com LocalStorage
 function iniciarPlanejamento() {
   const checkboxes = document.querySelectorAll(".tarefa");
   const progresso = document.getElementById("progresso");
 
-  if (!checkboxes.length || !progresso) return;
+  if (!checkboxes.length || !progresso) {
+    console.warn("⚠️ Planejamento não iniciado: elementos ausentes.");
+    return;
+  }
 
   function atualizarProgresso() {
     const total = checkboxes.length;
@@ -117,9 +142,10 @@ function iniciarPlanejamento() {
   }
 
   atualizarProgresso();
+  console.log("✅ Planejamento carregado");
 }
 
-// ✅ FLASHCARDS
+// ✅ FLASHCARDS (estático por enquanto)
 (function () {
   const flashcards = [
     { pergunta: "Qual é o objetivo principal do Regimento Interno?", resposta: "Estabelecer normas para o funcionamento da instituição." },
