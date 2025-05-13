@@ -1,134 +1,10 @@
-// script.js
+// 🚀 CONFIGURAÇÃO DO CONTENTFUL
 const client = contentful.createClient({
   space: 'cvwlultzovzs',
   accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
 });
 
-
-function iniciarPlanejamento() {
-  const checkboxes = document.querySelectorAll(".tarefa");
-  const progresso = document.getElementById("progresso");
-
-  if (!checkboxes.length || !progresso) return;
-
-  function atualizarProgresso() {
-    const total = checkboxes.length;
-    const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
-    const percentual = Math.round((marcadas / total) * 100);
-
-    progresso.value = percentual;
-    document.getElementById("percentual").textContent = `${percentual}%`;
-
-    localStorage.setItem("progresso_regimento", percentual);
-    checkboxes.forEach((cb, idx) => {
-      localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
-    });
-  }
-
-  checkboxes.forEach((cb, idx) => {
-    cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
-    cb.addEventListener("change", atualizarProgresso);
-  });
-
-  const progressoSalvo = localStorage.getItem("progresso_regimento");
-  if (progressoSalvo) {
-    progresso.value = progressoSalvo;
-    document.getElementById("percentual").textContent = `${progressoSalvo}%`;
-  }
-
-  // Atualiza na carga inicial
-  atualizarProgresso();
-}
-
-// Código dos flashcards
-(function () {
-    const flashcards = [
-        { pergunta: "Qual é o objetivo principal do Regimento Interno?", resposta: "Estabelecer normas para o funcionamento da instituição." },
-        { pergunta: "Quem é responsável por modificar o Regimento Interno?", resposta: "A Assembleia Geral, mediante votação." },
-        { pergunta: "Com que frequência o Regimento Interno deve ser revisado?", resposta: "A cada dois anos ou quando necessário." },
-        // Adicione mais flashcards conforme necessário
-    ];
-
-    let indiceAtual = 0;
-    const flashcard = document.getElementById("flashcard");
-    const pergunta = document.getElementById("pergunta");
-    const resposta = document.getElementById("resposta");
-
-    function exibirFlashcard(indice) {
-        const card = flashcards[indice];
-        pergunta.textContent = card.pergunta;
-        resposta.textContent = card.resposta;
-        flashcard.classList.remove("flipped");
-    }
-
-  document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("proximo");
-  if (btn) btn.addEventListener("click", proximoFlashcard);
-
-  // repita isso pros outros botões também
-});
-  function proximoFlashcard() {
-        indiceAtual = (indiceAtual + 1) % flashcards.length;
-        exibirFlashcard(indiceAtual);
-    }
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("proximo");
-  if (btn) btn.addEventListener("click", proximoFlashcard);
-
-  // repita isso pros outros botões também
-});
-    function flashcardAnterior() {
-        indiceAtual = (indiceAtual - 1 + flashcards.length) % flashcards.length;
-        exibirFlashcard(indiceAtual);
-    }
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("proximo");
-  if (btn) btn.addEventListener("click", proximoFlashcard);
-
-  // repita isso pros outros botões também
-});
-    function embaralharFlashcards() {
-        for (let i = flashcards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
-        }
-        indiceAtual = 0;
-        exibirFlashcard(indiceAtual);
-    }
-
-    flashcard.addEventListener("click", () => {
-        flashcard.classList.toggle("flipped");
-    });
-
-    document.getElementById("proximo").addEventListener("click", proximoFlashcard);
-    document.getElementById("anterior").addEventListener("click", flashcardAnterior);
-    document.getElementById("embaralhar").addEventListener("click", embaralharFlashcards);
-
-    // Navegação via teclado
-    document.addEventListener("keydown", (event) => {
-        switch (event.key) {
-            case "ArrowRight":
-                proximoFlashcard();
-                break;
-            case "ArrowLeft":
-                flashcardAnterior();
-                break;
-            case "Enter":
-                flashcard.classList.toggle("flipped");
-                break;
-        }
-    });
-
-    // Inicialização
-    exibirFlashcard(indiceAtual);
-})();
-
-fetchContent();
-
-// contefull
-
-
-// Função para carregar as aulas de Regimento Interno
+// ✅ FUNÇÃO: Carregar Aulas
 async function carregarAulas() {
   try {
     const response = await client.getEntries({
@@ -143,7 +19,6 @@ async function carregarAulas() {
   }
 }
 
-// Renderiza os blocos no container #aulas
 function renderizarAulas(aulas) {
   const container = document.getElementById('aulas');
   container.innerHTML = '';
@@ -156,10 +31,7 @@ function renderizarAulas(aulas) {
   aulas.forEach(item => {
     const { titulo, descricao, pdfoulink } = item.fields;
 
-    // Pegando descrição Rich Text de forma segura
     const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Descrição não disponível.';
-
-    // PDF link
     const urlArquivo = pdfoulink?.fields?.file?.url
       ? `https:${pdfoulink.fields.file.url}`
       : '#';
@@ -176,6 +48,8 @@ function renderizarAulas(aulas) {
     container.appendChild(bloco);
   });
 }
+
+// ✅ FUNÇÃO: Carregar Planejamento
 async function carregarPlanejamento() {
   try {
     const response = await client.getEntries({
@@ -208,10 +82,105 @@ async function carregarPlanejamento() {
       container.appendChild(li);
     });
 
-    iniciarPlanejamento(); // inicia com os novos checkboxes
+    iniciarPlanejamento();
   } catch (erro) {
     console.error('Erro ao carregar planejamento:', erro);
   }
 }
 
+// ✅ FUNÇÃO: Planejamento LocalStorage
+function iniciarPlanejamento() {
+  const checkboxes = document.querySelectorAll(".tarefa");
+  const progresso = document.getElementById("progresso");
 
+  if (!checkboxes.length || !progresso) return;
+
+  function atualizarProgresso() {
+    const total = checkboxes.length;
+    const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
+    const percentual = Math.round((marcadas / total) * 100);
+
+    progresso.value = percentual;
+    document.getElementById("percentual").textContent = `${percentual}%`;
+
+    localStorage.setItem("progresso_regimento", percentual);
+    checkboxes.forEach((cb, idx) => {
+      localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
+    });
+  }
+
+  checkboxes.forEach((cb, idx) => {
+    cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
+    cb.addEventListener("change", atualizarProgresso);
+  });
+
+  const progressoSalvo = localStorage.getItem("progresso_regimento");
+  if (progressoSalvo) {
+    progresso.value = progressoSalvo;
+    document.getElementById("percentual").textContent = `${progressoSalvo}%`;
+  }
+
+  atualizarProgresso();
+}
+
+// ✅ FLASHCARDS
+(function () {
+  const flashcards = [
+    { pergunta: "Qual é o objetivo principal do Regimento Interno?", resposta: "Estabelecer normas para o funcionamento da instituição." },
+    { pergunta: "Quem é responsável por modificar o Regimento Interno?", resposta: "A Assembleia Geral, mediante votação." },
+    { pergunta: "Com que frequência o Regimento Interno deve ser revisado?", resposta: "A cada dois anos ou quando necessário." }
+  ];
+
+  let indiceAtual = 0;
+
+  function exibirFlashcard(indice) {
+    const card = flashcards[indice];
+    const pergunta = document.getElementById("pergunta");
+    const resposta = document.getElementById("resposta");
+    const flashcard = document.getElementById("flashcard");
+
+    if (pergunta && resposta && flashcard) {
+      pergunta.textContent = card.pergunta;
+      resposta.textContent = card.resposta;
+      flashcard.classList.remove("flipped");
+    }
+  }
+
+  function proximoFlashcard() {
+    indiceAtual = (indiceAtual + 1) % flashcards.length;
+    exibirFlashcard(indiceAtual);
+  }
+
+  function flashcardAnterior() {
+    indiceAtual = (indiceAtual - 1 + flashcards.length) % flashcards.length;
+    exibirFlashcard(indiceAtual);
+  }
+
+  function embaralharFlashcards() {
+    for (let i = flashcards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+    }
+    indiceAtual = 0;
+    exibirFlashcard(indiceAtual);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("proximo")?.addEventListener("click", proximoFlashcard);
+    document.getElementById("anterior")?.addEventListener("click", flashcardAnterior);
+    document.getElementById("embaralhar")?.addEventListener("click", embaralharFlashcards);
+    document.getElementById("flashcard")?.addEventListener("click", () => {
+      document.getElementById("flashcard").classList.toggle("flipped");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      switch (event.key) {
+        case "ArrowRight": proximoFlashcard(); break;
+        case "ArrowLeft": flashcardAnterior(); break;
+        case "Enter": document.getElementById("flashcard")?.classList.toggle("flipped"); break;
+      }
+    });
+
+    exibirFlashcard(indiceAtual);
+  });
+})();
