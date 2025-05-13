@@ -159,5 +159,42 @@ function renderizarAulas(aulas) {
     container.appendChild(bloco);
   });
 }
+async function carregarPlanejamento() {
+  try {
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'planejamento',
+      order: 'fields.ordem'
+    });
+
+    const container = document.getElementById('lista-tarefas');
+    container.innerHTML = '';
+
+    response.items.forEach((item, idx) => {
+      const { titulo } = item.fields;
+
+      const li = document.createElement('li');
+
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.className = 'tarefa';
+      input.id = `tarefa-${idx}`;
+      input.setAttribute('aria-label', titulo);
+
+      const label = document.createElement('label');
+      label.setAttribute('for', `tarefa-${idx}`);
+      label.textContent = titulo;
+
+      li.appendChild(input);
+      li.appendChild(label);
+      container.appendChild(li);
+    });
+
+    iniciarPlanejamento(); // inicia com os novos checkboxes
+  } catch (erro) {
+    console.error('Erro ao carregar planejamento:', erro);
+  }
+}
 
 
