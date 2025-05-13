@@ -8,7 +8,7 @@ const client = contentful.createClient({
 async function carregarAulas() {
   try {
     const response = await client.getEntries({
-      content_type: 'disciplina',
+      content_type: 'Disciplina',
       'fields.categoria': 'regimento',
       order: 'fields.ordem'
     });
@@ -53,7 +53,7 @@ function renderizarAulas(aulas) {
 async function carregarPlanejamento() {
   try {
     const response = await client.getEntries({
-      content_type: 'disciplina',
+      content_type: 'Disciplina',
       'fields.categoria': 'regimento',
       'fields.tipo': 'planejamento',
       order: 'fields.ordem'
