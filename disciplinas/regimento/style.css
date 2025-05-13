@@ -274,9 +274,9 @@
     padding-left: 0;
 }
 
-.lista-tarefas{
+.lista-tarefas li {
 margin: 0.5rem 0;
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 .progress {
