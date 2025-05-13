@@ -25,7 +25,7 @@ async function fetchContentfulEntries(contentType, query = {}) {
 
 // Carregar Aulas
 async function loadAulas() {
-  const aulas = await fetchContentfulEntries('aula', { // Use o Content Type ID correto aqui
+  const aulas = await fetchContentfulEntries('disciplina', { // Use 'disciplina' como content_type
     'fields.categoria': 'regimento',
     'fields.tipo': 'aula',
     order: 'fields.ordem'
@@ -65,7 +65,7 @@ function renderAulas(aulas) {
 
 // Carregar Planejamento
 async function loadPlanejamento() {
-  const planejamentoItens = await fetchContentfulEntries('planejamento', { // Use o Content Type ID correto aqui
+  const planejamentoItens = await fetchContentfulEntries('disciplina', { // Use 'disciplina' como content_type
     'fields.categoria': 'regimento',
     'fields.tipo': 'planejamento',
     order: 'fields.ordem'
