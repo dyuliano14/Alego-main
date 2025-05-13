@@ -1,4 +1,9 @@
 // script.js
+const client = contentful.createClient({
+  space: 'cvwlultzovzs',
+  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
+});
+
 
 function iniciarPlanejamento() {
   const checkboxes = document.querySelectorAll(".tarefa");
@@ -56,16 +61,32 @@ function iniciarPlanejamento() {
         flashcard.classList.remove("flipped");
     }
 
-    function proximoFlashcard() {
+  document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("proximo");
+  if (btn) btn.addEventListener("click", proximoFlashcard);
+
+  // repita isso pros outros botões também
+});
+  function proximoFlashcard() {
         indiceAtual = (indiceAtual + 1) % flashcards.length;
         exibirFlashcard(indiceAtual);
     }
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("proximo");
+  if (btn) btn.addEventListener("click", proximoFlashcard);
 
+  // repita isso pros outros botões também
+});
     function flashcardAnterior() {
         indiceAtual = (indiceAtual - 1 + flashcards.length) % flashcards.length;
         exibirFlashcard(indiceAtual);
     }
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("proximo");
+  if (btn) btn.addEventListener("click", proximoFlashcard);
 
+  // repita isso pros outros botões também
+});
     function embaralharFlashcards() {
         for (let i = flashcards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -105,11 +126,7 @@ function iniciarPlanejamento() {
 fetchContent();
 
 // contefull
-// Contentful - Conexão
-const client = contentful.createClient({
-  space: 'cvwlultzovzs',
-  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
-});
+
 
 // Função para carregar as aulas de Regimento Interno
 async function carregarAulas() {
