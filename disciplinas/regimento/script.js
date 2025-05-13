@@ -7,11 +7,7 @@ const client = contentful.createClient({
 // ✅ FUNÇÃO: Carregar Aulas
 async function carregarAulas() {
   try {
-    const response = await client.getEntries({
-      content_type: 'disciplina',
-      'fields.categoria': 'regimento',
-      order: 'fields.ordem'
-    });
+    client.getEntries({
 
     renderizarAulas(response.items);
   } catch (erro) {
