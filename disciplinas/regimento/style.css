@@ -269,16 +269,6 @@
     font-size: 1rem;
 }
 
-.lista-tarefas{
-    list-style: none;
-    padding-left: 0;
-}
-
-.lista-tarefas li {
-margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
 .progress {
     width: 100%;
     height: 20px;
