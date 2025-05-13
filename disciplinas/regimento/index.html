@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
+    
 </head>
 
 <body>
@@ -28,6 +28,48 @@
   <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 
   <script src="script.js"></script>
+
+  <script>
+    async function carregarComponente(id, url) {
+        try {
+            const resposta = await fetch(url);
+            if (!resposta.ok) {
+                throw new Error(`Erro ao carregar componente ${id} de ${url}: ${resposta.status} - ${resposta.statusText}`);
+            }
+            const html = await resposta.text();
+            const elemento = document.getElementById(id);
+            if (elemento) {
+                elemento.innerHTML = html;
+            } else {
+                console.warn(`⚠️ Elemento com ID '${id}' não encontrado para inserir o conteúdo de ${url}`);
+            }
+        } catch (erro) {
+            console.error(`❌ Falha ao carregar componente ${id} de ${url}`, erro);
+        }
+    }
+
+    function inicializarComponentes() {
+        const componentes = [
+            ["header", "../../modulos/header.html"],
+            ["progressao", "../../modulos/progressao.html"],
+            ["planejamento", "./planejamento.html"],
+            ["aulas", "./aulas.html"],
+            ["resumos", "./resumos.html"],
+            ["flashcard-container", "./flashcards.html"],
+            ["apresentacoes", "./apresentacoes.html"],
+            ["footer", "../../modulos/footer.html"]
+        ];
+
+        componentes.forEach(([id, url]) => {
+            carregarComponente(id, url).then(() => {
+                if (id === "planejamento") carregarPlanejamento?.();
+                if (id === "aulas") carregarAulas?.();
+            });
+        });
+    }
+
+    inicializarComponentes();
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
