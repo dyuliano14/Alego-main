@@ -1,210 +1,240 @@
-const CONTENTFUL_SPACE_ID = 'cvwlultzovzs';
-const CONTENTFUL_ACCESS_TOKEN = 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0';
-
+// 🚀 CONFIGURAÇÃO DO CONTENTFUL
 const client = contentful.createClient({
-  space: CONTENTFUL_SPACE_ID,
-  accessToken: CONTENTFUL_ACCESS_TOKEN
+  space: 'cvwlultzovzs',
+  accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
 });
 
-console.log('✅ Contentful client inicializado');
+console.log("✅ Contentful client inicializado");
 
-// Função genérica para buscar dados do Contentful
-async function fetchContentfulEntries(contentType, query = {}) {
+// ✅ FUNÇÃO: Carregar Aulas
+async function carregarAulas() {
   try {
+    console.log("🔄 Buscando aulas...");
     const response = await client.getEntries({
-      content_type: contentType,
-      ...query
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'aula',
+      order: 'fields.ordem'
     });
-    console.log(`✅ ${response.items.length} entradas de "${contentType}" encontradas`);
-    return response.items;
-  } catch (error) {
-    console.error(`❌ Erro ao buscar "${contentType}":`, error);
-    return []; // Retorna um array vazio para evitar erros em chamadas subsequentes
+
+    console.log(`📚 ${response.items.length} aulas recebidas`);
+    renderizarAulas(response.items);
+  } catch (erro) {
+    console.error('❌ Erro ao buscar aulas:', erro);
   }
 }
 
-// Carregar Aulas
-async function loadAulas() {
-  const aulas = await fetchContentfulEntries('disciplina', { // Use 'disciplina' como content_type
-    'fields.categoria': 'regimento',
-    'fields.tipo': 'aula',
-    order: 'fields.ordem'
-  });
-  renderAulas(aulas);
-}
-
-function renderAulas(aulas) {
+// ✅ RENDERIZAÇÃO: Aulas
+function renderizarAulas(aulas) {
   const container = document.getElementById('aulas');
   if (!container) {
-    console.warn('⚠️ Container #aulas não encontrado');
+    console.warn("⚠️ Container #aulas não encontrado");
     return;
   }
 
   container.innerHTML = '';
 
-  if (aulas.length === 0) {
+  if (!aulas.length) {
     container.innerHTML = '<p>Nenhuma aula encontrada.</p>';
     return;
   }
 
-  aulas.forEach(aula => {
-    const { titulo, descricao, pdfoulink } = aula.fields;
+  aulas.forEach(item => {
+    const { titulo, descricao, pdfoulink } = item.fields;
+
     const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Descrição não disponível.';
-    const urlArquivo = pdfoulink?.fields?.file?.url ? `https:${pdfoulink.fields.file.url}` : '#';
+    const urlArquivo = pdfoulink?.fields?.file?.url
+      ? `https:${pdfoulink.fields.file.url}`
+      : '#';
 
     const bloco = document.createElement('div');
     bloco.className = 'aula-bloco';
+
     bloco.innerHTML = `
       <h3>${titulo}</h3>
       <p>${descricaoTexto}</p>
       <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
     `;
+
     container.appendChild(bloco);
   });
 }
 
-// Carregar Planejamento
-async function loadPlanejamento() {
-  const planejamentoItens = await fetchContentfulEntries('disciplina', { // Use 'disciplina' como content_type
-    'fields.categoria': 'regimento',
-    'fields.tipo': 'planejamento',
-    order: 'fields.ordem'
-  });
-  renderPlanejamento(planejamentoItens);
+// ✅ FUNÇÃO: Carregar Planejamento
+async function carregarPlanejamento() {
+  try {
+    console.log("🔄 Buscando planejamento...");
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'planejamento',
+      order: 'fields.ordem'
+    });
+
+    console.log(`✅ ${response.items.length} tarefas encontradas`);
+    const container = document.getElementById('lista-tarefas');
+    if (!container) {
+      console.warn("⚠️ Container #lista-tarefas não encontrado");
+      return;
+    }
+
+    container.innerHTML = '';
+
+    response.items.forEach((item, idx) => {
+      const { titulo } = item.fields;
+
+      const li = document.createElement('li');
+
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.className = 'tarefa';
+      input.id = `tarefa-${idx}`;
+      input.setAttribute('aria-label', titulo);
+
+      const label = document.createElement('label');
+      label.setAttribute('for', `tarefa-${idx}`);
+      label.textContent = titulo;
+
+      li.appendChild(input);
+      li.appendChild(label);
+      container.appendChild(li);
+    });
+
+    iniciarPlanejamento();
+  } catch (erro) {
+    console.error('❌ Erro ao carregar planejamento:', erro);
+  }
 }
 
-function renderPlanejamento(planejamentoItens) {
-  const container = document.getElementById('lista-tarefas');
-  if (!container) {
-    console.warn('⚠️ Container #lista-tarefas não encontrado');
+// ✅ FUNÇÃO: Planejamento com LocalStorage
+function iniciarPlanejamento() {
+  const checkboxes = document.querySelectorAll(".tarefa");
+  const progresso = document.getElementById("progresso");
+
+  if (!checkboxes.length || !progresso) {
+    console.warn("⚠️ Planejamento não iniciado: elementos ausentes.");
     return;
   }
 
-  container.innerHTML = '';
-
-  if (planejamentoItens.length === 0) {
-    container.innerHTML = '<p>Nenhum item de planejamento encontrado.</p>';
-    return;
-  }
-
-  planejamentoItens.forEach((item, index) => {
-    const { titulo } = item.fields;
-    const li = document.createElement('li');
-    li.innerHTML = `
-      <input type="checkbox" id="tarefa-${index}" class="tarefa" aria-label="${titulo}">
-      <label for="tarefa-${index}">${titulo}</label>
-    `;
-    container.appendChild(li);
-  });
-
-  initPlanejamento();
-}
-
-// Planejamento com LocalStorage
-function initPlanejamento() {
-  const checkboxes = document.querySelectorAll('.tarefa');
-  const progresso = document.getElementById('progresso');
-  const percentualElement = document.getElementById('percentual');
-
-  if (!checkboxes.length || !progresso || !percentualElement) {
-    console.warn('⚠️ Planejamento não iniciado: elementos ausentes.');
-    return;
-  }
-
-  function updateProgress() {
+  function atualizarProgresso() {
     const total = checkboxes.length;
-    const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-    const percentage = total === 0 ? 0 : Math.round((checkedCount / total) * 100);
+    const marcadas = Array.from(checkboxes).filter(c => c.checked).length;
+    const percentual = Math.round((marcadas / total) * 100);
 
-    progresso.value = percentage;
-    percentualElement.textContent = `${percentage}%`;
+    progresso.value = percentual;
+    document.getElementById("percentual").textContent = `${percentual}%`;
 
-    localStorage.setItem('progresso_regimento', percentage);
-    checkboxes.forEach((cb, index) => {
-      localStorage.setItem(`tarefa_regimento_${index}`, cb.checked);
+    localStorage.setItem("progresso_regimento", percentual);
+    checkboxes.forEach((cb, idx) => {
+      localStorage.setItem(`tarefa_regimento_${idx}`, cb.checked);
     });
   }
 
-  checkboxes.forEach((cb, index) => {
-    cb.checked = localStorage.getItem(`tarefa_regimento_${index}`) === 'true';
-    cb.addEventListener('change', updateProgress);
+  checkboxes.forEach((cb, idx) => {
+    cb.checked = localStorage.getItem(`tarefa_regimento_${idx}`) === "true";
+    cb.addEventListener("change", atualizarProgresso);
   });
 
-  const savedProgress = localStorage.getItem('progresso_regimento');
-  if (savedProgress) {
-    progresso.value = savedProgress;
-    percentualElement.textContent = `${savedProgress}%`;
+  const progressoSalvo = localStorage.getItem("progresso_regimento");
+  if (progressoSalvo) {
+    progresso.value = progressoSalvo;
+    document.getElementById("percentual").textContent = `${progressoSalvo}%`;
   }
 
-  updateProgress();
-  console.log('✅ Planejamento carregado');
+  atualizarProgresso();
+  console.log("✅ Planejamento carregado");
 }
 
-// Flashcards (estático por enquanto)
-function initFlashcards() {
+// ✅ FLASHCARDS (estático por enquanto)
+(function () {
   const flashcards = [
-    { pergunta: 'Qual é o objetivo principal do Regimento Interno?', resposta: 'Estabelecer normas para o funcionamento da instituição.' },
-    { pergunta: 'Quem é responsável por modificar o Regimento Interno?', resposta: 'A Assembleia Geral, mediante votação.' },
-    { pergunta: 'Com que frequência o Regimento Interno deve ser revisado?', resposta: 'A cada dois anos ou quando necessário.' }
+    { pergunta: "Qual é o objetivo principal do Regimento Interno?", resposta: "Estabelecer normas para o funcionamento da instituição." },
+    { pergunta: "Quem é responsável por modificar o Regimento Interno?", resposta: "A Assembleia Geral, mediante votação." },
+    { pergunta: "Com que frequência o Regimento Interno deve ser revisado?", resposta: "A cada dois anos ou quando necessário." }
   ];
 
-  let currentCardIndex = 0;
-  const questionElement = document.getElementById('pergunta');
-  const answerElement = document.getElementById('resposta');
-  const flashcardElement = document.getElementById('flashcard');
-  const nextButton = document.getElementById('proximo');
-  const prevButton = document.getElementById('anterior');
-  const shuffleButton = document.getElementById('embaralhar');
+  let indiceAtual = 0;
 
-  function showCard(index) {
-    if (!questionElement || !answerElement || !flashcardElement) return;
-    questionElement.textContent = flashcards[index].pergunta;
-    answerElement.textContent = flashcards[index].resposta;
-    flashcardElement.classList.remove('flipped');
+  function exibirFlashcard(indice) {
+    const card = flashcards[indice];
+    const pergunta = document.getElementById("pergunta");
+    const resposta = document.getElementById("resposta");
+    const flashcard = document.getElementById("flashcard");
+
+    if (pergunta && resposta && flashcard) {
+      pergunta.textContent = card.pergunta;
+      resposta.textContent = card.resposta;
+      flashcard.classList.remove("flipped");
+    }
   }
 
-  function showNextCard() {
-    currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-    showCard(currentCardIndex);
+  function proximoFlashcard() {
+    indiceAtual = (indiceAtual + 1) % flashcards.length;
+    exibirFlashcard(indiceAtual);
   }
 
-  function showPrevCard() {
-    currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
-    showCard(currentCardIndex);
+  function flashcardAnterior() {
+    indiceAtual = (indiceAtual - 1 + flashcards.length) % flashcards.length;
+    exibirFlashcard(indiceAtual);
   }
 
-  function shuffleCards() {
+  function embaralharFlashcards() {
     for (let i = flashcards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
     }
-    currentCardIndex = 0;
-    showCard(currentCardIndex);
+    indiceAtual = 0;
+    exibirFlashcard(indiceAtual);
   }
 
-  if (nextButton) nextButton.addEventListener('click', showNextCard);
-  if (prevButton) prevButton.addEventListener('click', showPrevCard);
-  if (shuffleButton) shuffleButton.addEventListener('click', shuffleCards);
-  if (flashcardElement) {
-    flashcardElement.addEventListener('click', () => flashcardElement.classList.toggle('flipped'));
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("proximo")?.addEventListener("click", proximoFlashcard);
+    document.getElementById("anterior")?.addEventListener("click", flashcardAnterior);
+    document.getElementById("embaralhar")?.addEventListener("click", embaralharFlashcards);
+    document.getElementById("flashcard")?.addEventListener("click", () => {
+      document.getElementById("flashcard").classList.toggle("flipped");
+    });
 
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener("keydown", (event) => {
       switch (event.key) {
-        case 'ArrowRight': showNextCard(); break;
-        case 'ArrowLeft': showPrevCard(); break;
-        case 'Enter': flashcardElement.classList.toggle('flipped'); break;
+        case "ArrowRight": proximoFlashcard(); break;
+        case "ArrowLeft": flashcardAnterior(); break;
+        case "Enter": document.getElementById("flashcard")?.classList.toggle("flipped"); break;
       }
     });
-  }
 
-  showCard(currentCardIndex);
-}
+    exibirFlashcard(indiceAtual);
+  });
+})();
 
-// Inicialização
-document.addEventListener('DOMContentLoaded', () => {
-  initFlashcards(); // Inicializa os flashcards
-
-  // Carrega os dados do Contentful e renderiza
-  loadAulas();
-  loadPlanejamento();
+document.addEventListener("DOMContentLoaded", () => {
+  carregarComponentes(); // Carrega os componentes HTML
+  carregarAulas(); // Carrega os dados do Contentful
+  carregarPlanejamento();
 });
+
+async function carregarComponentes() {
+  const componentes = [
+    ["header", "../../modulos/header.html"],
+    ["progressao", "../../modulos/progressao.html"],
+    ["planejamento", "./planejamento.html"],
+    ["aulas", "./aulas.html"],
+    ["resumos", "./resumos.html"],
+    ["flashcard-container", "./flashcards.html"],
+    ["apresentacoes", "./apresentacoes.html"],
+    ["footer", "../../modulos/footer.html"]
+  ];
+
+  for (const [id, url] of componentes) {
+    try {
+      const resposta = await fetch(url);
+      if (!resposta.ok) {
+        throw new Error(`Erro ao carregar ${url}: ${resposta.status}`);
+      }
+      const html = await resposta.text();
+      document.getElementById(id).innerHTML = html;
+    } catch (erro) {
+      console.error(erro);
+    }
+  }
+}
