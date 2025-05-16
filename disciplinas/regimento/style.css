@@ -1,13 +1,96 @@
-/* Reset básico */
+:root {
+    --cor-fundo-modulo: #fdfdfd;
+    --cor-borda: #ddd;
+    --cor-botao-aula: #ff9800;
+    --cor-botao-aula-hover: #ff9900e3;
+    --cor-botao-resumo: #9f21f3;
+    --cor-botao-resumo-hover: #9f21f3d2;
+    --cor-botao-apresentacoes: #08c828d1;
+    --cor-botao-apresentacoes-hover: #08c828c2;
+    --cor-texto: #333;
+    --padding-modulo: 1.5rem;
+    --max-width-modulo: 600px;
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
-/* Container principal */
+/* Estilo base para blocos de módulo */
+.modulo {
+    background: var(--cor-fundo-modulo);
+    border: 1px solid var(--cor-borda);
+    padding: var(--padding-modulo);
+    margin-top: 2rem;
+    border-radius: 8px;
+    max-width: var(--max-width-modulo);
+    margin-inline: auto;
+}
+
+.modulo h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+/* Botões reutilizáveis */
+.botao {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.bt_aula {
+    background-color: var(--cor-botao-aula);
+}
+
+.bt_aula:hover {
+    background-color: var(--cor-botao-aula-hover);
+}
+
+.bt_resumo {
+    background-color: var(--cor-botao-resumo);
+}
+
+.bt_resumo:hover {
+    background-color: var(--cor-botao-resumo-hover);
+}
+
+.bt_apresentacoes {
+    background-color: var(--cor-botao-apresentacoes);
+}
+
+.bt_apresentacoes:hover {
+    background-color: var(--cor-botao-apresentacoes-hover);
+}
+
+/* Aulas renderizadas via Contentful */
+.aula-bloco {
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Planejamento */
+.planejamento h3,
+.planejamento h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Flashcards */
 #flashcard-container {
     max-width: 600px;
     margin-top: 2rem;
@@ -17,36 +100,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-
 }
 
-.modulo-box {
-  background: linear-gradient(to top left, #ffffff, #e0f7fa);
-  border: 1px solid #ddd;
-  padding: 2rem;
-  margin: 3rem auto;
-  border-radius: 10px;
-  max-width: 800px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-
-.modulo-box h2 {
-  text-align: center;
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-/* Título */
-#flashcard-container h2 {
-    margin-top: -25px;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Flashcard */
 #flashcard {
     position: relative;
     width: 100%;
@@ -61,7 +116,7 @@
     height: 100%;
     backface-visibility: hidden;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid var(--cor-borda);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -79,27 +134,34 @@
     transform: rotateY(180deg);
 }
 
-/* Controles */
 #controles {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #controles button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #0066cc;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
     cursor: pointer;
+    background-color: #0066cc;
 }
 
 #controles button:hover {
     background-color: #005bb5;
 }
 
+
+#controles button:hover {
+    background-color: #005bb5;
+}
+
+/* Responsividade */
 @media (max-width: 600px) {
     #flashcard-container {
         padding: 10px;
@@ -116,7 +178,6 @@
 
     #controles {
         flex-direction: column;
-        gap: 10px;
     }
 
     #controles button {
@@ -124,222 +185,25 @@
     }
 }
 
-
-.planejamento {
-    background: #fdfdfd;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    margin-inline: auto;
-
-}
-
-.planejamento h2 {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.planejamento h4 {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.planejamento h3 {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.aula_pdf {
-    background: #fdfdfd;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    margin-inline: auto;
-}
-
-.aula_pdf h2 {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-#controles .bt_aula {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff9800;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0px 0px 10px 0px;
-    cursor: pointer;
-}
-
-#controles .bt_aula:hover {
-    background-color: #ff9900e3
-}
-.apresentacoes {
-    background: #fdfdfd;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    margin-inline: auto;
-    margin-bottom: 5rem;
-}
-
-.apresentacoes h2 {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-
-#controles .bt_apresentacoes {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #08c828d1;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0px 0px 10px 0px;
-    cursor: pointer;
-}
-
-#controles .bt_apresentacoes:hover {
-    background-color: #08c828c2;
-}
-
-.resumos{
-    background: #fdfdfd;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    margin-inline: auto;
-}
-
-.resumos h2 {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.bt_resumo {
-    padding: 10px 20px;
-    background-color: #9f21f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0px 0px 10px 0px;
-}
-
-
-#controles .bt_resumo {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #9f21f3;
-    color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0px 0px 10px 0px;
-    cursor: pointer;
-}
-
-#controles .bt_resumo:hover {
-    background-color: #9f21f3d2;
-}
-
-.tarefa-lista {
-    list-style: none;
-    padding-left: 0;
-}
-
-.tarefa-lista li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.progress {
-    width: 100%;
-    height: 20px;
-    margin-bottom: 1rem;
-}
-
-.info {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    background-color: #f9f9f9;
-}
-
-.boxinfo {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    background-color: #f9f9f9;
-}
-
-.info h3 {
-    margin-top: 0;
-}
-
-.caixa h2 {
-    text-align: center;
-}
-
-.progresso-container {
-  margin: 30px 0;
-  font-size: 1.2rem;
-  color: #333;
-  text-align: center;
-}
-
-.barra-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-.lista-tarefas {
-    border: 1px solid red; /* Sua regra */
-}
+/* Progresso */
 #progresso {
-  width: 300px;
-  height: 25px;
-  appearance: none;
+    width: 300px;
+    height: 25px;
+    appearance: none;
 }
 
 #progresso::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 8px;
+    background-color: #eee;
+    border-radius: 8px;
 }
 
 #progresso::-webkit-progress-value {
-  background-image: linear-gradient(to right, #0d6efd, #0dcaf0);
-  border-radius: 8px;
+    background-image: linear-gradient(to right, #0d6efd, #0dcaf0);
+    border-radius: 8px;
 }
 
 #percentual {
-  font-weight: bold;
-  min-width: 50px;
-  color: #0d6efd;
-}
-
-
-header h1,
-h2,
-h3 {
-    font-size: 1.5rem;
-    font-style: bold;
+    font-weight: bold;
+    min-width: 50px;
+    color: #0d6efd;
 }

@@ -3,64 +3,39 @@ const client = contentful.createClient({
   space: 'cvwlultzovzs',
   accessToken: 'XRc8tJn8Mplu0wDlQeLjJsOdc_HeFtLgkKGdxPE2rp0'
 });
-
 console.log("✅ Contentful client inicializado");
 
-// ✅ FUNÇÃO: Carregar Aulas
-async function carregarAulas() {
-  try {
-    console.log("🔄 Buscando aulas...");
-    const response = await client.getEntries({
-      content_type: 'disciplina',
-      'fields.categoria': 'regimento',
-      'fields.tipo': 'aula',
-      order: 'fields.ordem'
-    });
+// 📦 COMPONENTES DINÂMICOS
+async function carregarComponentes() {
+  const componentes = [
+    ["header", "../../modulos/header.html"],
+    ["progressao", "../../modulos/progressao.html"],
+    ["planejamento", "./planejamento.html"],
+    ["aulas", "./aulas.html"],
+    ["resumos", "./resumos.html"],
+    ["flashcard-container", "./flashcards.html"],
+    ["apresentacoes", "./apresentacoes.html"],
+    ["footer", "../../modulos/footer.html"]
+  ];
 
-    console.log(`📚 ${response.items.length} aulas recebidas`);
-    renderizarAulas(response.items);
-  } catch (erro) {
-    console.error('❌ Erro ao buscar aulas:', erro);
+  for (const [id, url] of componentes) {
+    try {
+      const resposta = await fetch(url);
+      if (!resposta.ok) throw new Error(`Erro ao carregar ${url}: ${resposta.status}`);
+      const html = await resposta.text();
+      const container = document.getElementById(id);
+      if (container) {
+        container.innerHTML = html;
+        if (id === "planejamento") window.carregarPlanejamento?.();
+        if (id === "aulas") window.carregarAulas?.();
+      }
+    } catch (erro) {
+      console.error(`❌ Falha ao carregar componente ${id} de ${url}`, erro);
+    }
   }
 }
 
-// ✅ RENDERIZAÇÃO: Aulas
-function renderizarAulas(aulas) {
-  const container = document.getElementById('aulas');
-  if (!container) {
-    console.warn("⚠️ Container #aulas não encontrado");
-    return;
-  }
-
-  container.innerHTML = '';
-
-  if (!aulas.length) {
-    container.innerHTML = '<p>Nenhuma aula encontrada.</p>';
-    return;
-  }
-
-  aulas.forEach(item => {
-    const { titulo, descricao, pdfoulink } = item.fields;
-
-    const descricaoTexto = descricao?.content?.[0]?.content?.[0]?.value || 'Descrição não disponível.';
-    const urlArquivo = pdfoulink?.fields?.file?.url
-      ? `https:${pdfoulink.fields.file.url}`
-      : '#';
-
-    const bloco = document.createElement('div');
-    bloco.className = 'aula-bloco';
-
-    bloco.innerHTML = `
-      <h3>${titulo}</h3>
-      <p>${descricaoTexto}</p>
-      <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
-    `;
-
-    container.appendChild(bloco);
-  });
-}
-
-// ✅ FUNÇÃO: Carregar Planejamento
+// 📘 PLANEJAMENTO
 async function carregarPlanejamento() {
   try {
     console.log("🔄 Buscando planejamento...");
@@ -71,7 +46,8 @@ async function carregarPlanejamento() {
       order: 'fields.ordem'
     });
 
-    console.log(`✅ ${response.items.length} tarefas encontradas`);
+    window.carregarPlanejamento = carregarPlanejamento;
+
     const container = document.getElementById('lista-tarefas');
     if (!container) {
       console.warn("⚠️ Container #lista-tarefas não encontrado");
@@ -79,25 +55,14 @@ async function carregarPlanejamento() {
     }
 
     container.innerHTML = '';
-
     response.items.forEach((item, idx) => {
       const { titulo } = item.fields;
-
-      const li = document.createElement('li');
-
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.className = 'tarefa';
-      input.id = `tarefa-${idx}`;
-      input.setAttribute('aria-label', titulo);
-
-      const label = document.createElement('label');
-      label.setAttribute('for', `tarefa-${idx}`);
-      label.textContent = titulo;
-
-      li.appendChild(input);
-      li.appendChild(label);
-      container.appendChild(li);
+      container.innerHTML += `
+        <li>
+          <input type="checkbox" id="tarefa-${idx}" class="tarefa" aria-label="${titulo}">
+          <label for="tarefa-${idx}">${titulo}</label>
+        </li>
+      `;
     });
 
     iniciarPlanejamento();
@@ -106,7 +71,7 @@ async function carregarPlanejamento() {
   }
 }
 
-// ✅ FUNÇÃO: Planejamento com LocalStorage
+// 🔁 LOCALSTORAGE DO PLANEJAMENTO
 function iniciarPlanejamento() {
   const checkboxes = document.querySelectorAll(".tarefa");
   const progresso = document.getElementById("progresso");
@@ -145,7 +110,53 @@ function iniciarPlanejamento() {
   console.log("✅ Planejamento carregado");
 }
 
-// ✅ FLASHCARDS (estático por enquanto)
+// 📄 AULAS
+async function carregarAulas() {
+  try {
+    console.log("🔄 Buscando aulas...");
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'aula',
+      order: 'fields.ordem'
+    });
+    window.carregarAulas = carregarAulas;
+
+    console.log(`📚 ${response.items.length} aulas recebidas`);
+    renderizarAulas(response.items);
+  } catch (erro) {
+    console.error('❌ Erro ao buscar aulas:', erro);
+  }
+}
+
+
+function renderizarAulas(aulas) {
+  const container = document.getElementById('lista-aulas');
+  if (!container) {
+    console.warn("⚠️ Container #lista-aulas não encontrado");
+    return;
+  }
+
+  container.innerHTML = aulas.length
+    ? aulas.map(({ fields }) => {
+      const titulo = fields.titulo;
+      const descricao = fields.descricao?.content?.[0]?.content?.[0]?.value || "Descrição não disponível.";
+      const urlArquivo = fields.pdfoulink?.fields?.file?.url
+        ? `https:${fields.pdfoulink.fields.file.url}`
+        : "#";
+
+      return `
+          <div class="aula-bloco">
+            <h3>${titulo}</h3>
+            <p>${descricao}</p>
+            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+          </div>
+        `;
+    }).join('')
+    : '<p>Nenhuma aula encontrada.</p>';
+}
+
+// 🧠 FLASHCARDS ESTÁTICOS
 (function () {
   const flashcards = [
     { pergunta: "Qual é o objetivo principal do Regimento Interno?", resposta: "Estabelecer normas para o funcionamento da instituição." },
@@ -157,15 +168,9 @@ function iniciarPlanejamento() {
 
   function exibirFlashcard(indice) {
     const card = flashcards[indice];
-    const pergunta = document.getElementById("pergunta");
-    const resposta = document.getElementById("resposta");
-    const flashcard = document.getElementById("flashcard");
-
-    if (pergunta && resposta && flashcard) {
-      pergunta.textContent = card.pergunta;
-      resposta.textContent = card.resposta;
-      flashcard.classList.remove("flipped");
-    }
+    document.getElementById("pergunta").textContent = card.pergunta;
+    document.getElementById("resposta").textContent = card.resposta;
+    document.getElementById("flashcard").classList.remove("flipped");
   }
 
   function proximoFlashcard() {
@@ -207,34 +212,7 @@ function iniciarPlanejamento() {
   });
 })();
 
+// 🚀 INICIALIZAÇÃO
 document.addEventListener("DOMContentLoaded", () => {
-  carregarComponentes(); // Carrega os componentes HTML
-  carregarAulas(); // Carrega os dados do Contentful
-  carregarPlanejamento();
+  carregarComponentes();
 });
-
-async function carregarComponentes() {
-  const componentes = [
-    ["header", "../../modulos/header.html"],
-    ["progressao", "../../modulos/progressao.html"],
-    ["planejamento", "./planejamento.html"],
-    ["aulas", "./aulas.html"],
-    ["resumos", "./resumos.html"],
-    ["flashcard-container", "./flashcards.html"],
-    ["apresentacoes", "./apresentacoes.html"],
-    ["footer", "../../modulos/footer.html"]
-  ];
-
-  for (const [id, url] of componentes) {
-    try {
-      const resposta = await fetch(url);
-      if (!resposta.ok) {
-        throw new Error(`Erro ao carregar ${url}: ${resposta.status}`);
-      }
-      const html = await resposta.text();
-      document.getElementById(id).innerHTML = html;
-    } catch (erro) {
-      console.error(erro);
-    }
-  }
-}
