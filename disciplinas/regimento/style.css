@@ -7,6 +7,8 @@
     --cor-botao-resumo-hover: #9f21f3d2;
     --cor-botao-apresentacoes: #08c828d1;
     --cor-botao-apresentacoes-hover: #08c828c2;
+    --cor-botao-flashcard: #0043fa;
+    --cor-botao-flashcard-hover: #5695f3;
     --cor-texto: #333;
     --padding-modulo: 1.5rem;
     --max-width-modulo: 600px;
@@ -28,6 +30,7 @@
     border-radius: 8px;
     max-width: var(--max-width-modulo);
     margin-inline: auto;
+    
 }
 
 .modulo h2 {
@@ -46,6 +49,7 @@
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .bt_aula {
@@ -72,6 +76,14 @@
     background-color: var(--cor-botao-apresentacoes-hover);
 }
 
+.bt_flashcard {
+    background-color: var(--cor-botao-flashcard);
+}
+
+.bt_flashcard:hover {
+    background-color: var(--cor-botao-flashcard-hover);
+}
+
 /* Aulas renderizadas via Contentful */
 .aula-bloco {
     background: #fff;
@@ -82,6 +94,13 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+.aula_pdf h3,
+.aula_pdf h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
 /* Planejamento */
 .planejamento h3,
 .planejamento h4 {
@@ -89,6 +108,20 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
+
+.apresentacoes {
+    margin-bottom: 120px;
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+li {
+    list-style-type: none;
+}
+
 
 /* Flashcards */
 #flashcard-container {
@@ -149,17 +182,9 @@
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
-    background-color: #0066cc;
+    background-color: #0080ff;
 }
 
-#controles button:hover {
-    background-color: #005bb5;
-}
-
-
-#controles button:hover {
-    background-color: #005bb5;
-}
 
 /* Responsividade */
 @media (max-width: 600px) {
