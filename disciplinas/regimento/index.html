@@ -65,14 +65,14 @@
             componentes.forEach(([id, url]) => {
                 carregarComponente(id, url).then(() => {
                     if (id === "planejamento") carregarPlanejamento?.();
-
+window.carregarPlanejamento = carregarPlanejamento;
                     if (id === "aulas") carregarAulas?.();
-
+ window.carregarAulas = carregarAulas;
 
                 });
             });
-            window.carregarAulas = carregarAulas;
-            window.carregarPlanejamento = carregarPlanejamento;
+           
+            
         }
 
         inicializarComponentes();
