@@ -12,3 +12,12 @@
 
     </div>
 </section>
+<script>
+    fetch('./flashcards.json')
+        .then(res => res.json())
+        .then(data => {
+            console.log('Flashcards carregados:', data);
+            // Aqui você pode montar os flashcards dinamicamente
+        })
+        .catch(err => console.error('Erro ao carregar flashcards:', err));
+</script>

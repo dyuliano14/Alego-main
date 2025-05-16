@@ -28,6 +28,8 @@ async function carregarComponentes() {
         container.innerHTML = html;
         if (id === "planejamento") window.carregarPlanejamento?.();
         if (id === "aulas") window.carregarAulas?.();
+        if (id === "resumos") window.carregarResumos?.();
+        if (id === "apresentacoes") window.carregarapressentacoes?.();
       }
     } catch (erro) {
       console.error(`❌ Falha ao carregar componente ${id} de ${url}`, erro);
@@ -154,6 +156,99 @@ function renderizarAulas(aulas) {
         `;
     }).join('')
     : '<p>Nenhuma aula encontrada.</p>';
+}
+
+
+// RESUMOS
+async function carregarResumos() {
+  try {
+    console.log("🔄 Buscando resumos...");
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'resumos',
+      order: 'fields.ordem'
+    });
+    window.carregarResumos = carregarResumos;
+
+    console.log(`📚 ${response.items.length} resumos recebidas`);
+    renderizarResumos(response.items);
+  } catch (erro) {
+    console.error('❌ Erro ao buscar resumos:', erro);
+  }
+}
+
+
+function renderizarAulas(resumos) {
+  const container = document.getElementById('listar-resumos');
+  if (!container) {
+    console.warn("⚠️ Container #lista-resumos não encontrado");
+    return;
+  }
+
+  container.innerHTML = resumos.length
+    ? resumos.map(({ fields }) => {
+      const titulo = fields.titulo;
+      const descricao = fields.descricao?.content?.[0]?.content?.[0]?.value || "Descrição não disponível.";
+      const urlArquivo = fields.pdfoulink?.fields?.file?.url
+        ? `https:${fields.pdfoulink.fields.file.url}`
+        : "#";
+
+      return `
+          <div class="resumos-bloco">
+            <h3>${titulo}</h3>
+            <p>${descricao}</p>
+            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+          </div>
+        `;
+    }).join('')
+    : '<p>Nenhuma resumo encontrada.</p>';
+}
+
+// 📄 Apresentação 
+async function carregarApressentacoes() {
+  try {
+    console.log("🔄 Buscando apressentacoes...");
+    const response = await client.getEntries({
+      content_type: 'disciplina',
+      'fields.categoria': 'regimento',
+      'fields.tipo': 'aula',
+      order: 'fields.ordem'
+    });
+    window.carregarApressentacoes = carregarApressentacoes;
+
+    console.log(`📚 ${response.items.length} apressentacoes recebidas`);
+    renderizarApressentacoes(response.items);
+  } catch (erro) {
+    console.error('❌ Erro ao buscar apressentacoes:', erro);
+  }
+}
+
+
+function renderizArapressentacoes(apressentacoes) {
+  const container = document.getElementById('lista-apressentacoes');
+  if (!container) {
+    console.warn("⚠️ Container #lista-apressentacoes não encontrado");
+    return;
+  }
+
+  container.innerHTML = apressentacoes.length
+    ? apressentacoes.map(({ fields }) => {
+      const titulo = fields.titulo;
+      const descricao = fields.descricao?.content?.[0]?.content?.[0]?.value || "Descrição não disponível.";
+      const urlArquivo = fields.pdfoulink?.fields?.file?.url
+        ? `https:${fields.pdfoulink.fields.file.url}`
+        : "#";
+
+      return `
+          <div class="apressentacoes-bloco">
+            <h3>${titulo}</h3>
+            <p>${descricao}</p>
+            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+          </div>
+        `;
+    }).join('')
+    : '<p>Nenhuma apressentacoes encontrada.</p>';
 }
 
 // 🧠 FLASHCARDS ESTÁTICOS

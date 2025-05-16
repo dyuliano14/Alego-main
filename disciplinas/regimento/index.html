@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regimento Interno - Estudo ALEGO</title>
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/alego-main/assets/images/favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="../../css/style.css"> <!-- global -->
     <link rel="stylesheet" href="./style.css"> <!-- local -->
@@ -65,14 +65,18 @@
             componentes.forEach(([id, url]) => {
                 carregarComponente(id, url).then(() => {
                     if (id === "planejamento") carregarPlanejamento?.();
-window.carregarPlanejamento = carregarPlanejamento;
+                    window.carregarPlanejamento = carregarPlanejamento;
                     if (id === "aulas") carregarAulas?.();
- window.carregarAulas = carregarAulas;
+                    window.carregarResumos = carregarAulas;
+                    if (id === "resumos") carregarResumos?.();
+                    window.carregarResumos = carregarResumos;
+                    if (id === "apresentacoes") carregarApresentacoes?.();
+                    window.carregarApresentacoes = carregarApresentacoes;
 
                 });
             });
-           
-            
+
+
         }
 
         inicializarComponentes();
