@@ -29,7 +29,7 @@ async function carregarComponentes() {
         if (id === "planejamento") window.carregarPlanejamento?.();
         if (id === "aulas") window.carregarAulas?.();
         if (id === "resumos") window.carregarResumos?.();
-        if (id === "apresentacoes") window.carregarapressentacoes?.();
+        if (id === "apresentacoes") window.carregarApresentacoes?.();
       }
     } catch (erro) {
       console.error(`❌ Falha ao carregar componente ${id} de ${url}`, erro);
@@ -179,7 +179,7 @@ async function carregarResumos() {
 }
 
 
-function renderizarAulas(resumos) {
+function renderizarResumos(resumos) {
   const container = document.getElementById('listar-resumos');
   if (!container) {
     console.warn("⚠️ Container #lista-resumos não encontrado");
@@ -206,34 +206,34 @@ function renderizarAulas(resumos) {
 }
 
 // 📄 Apresentação 
-async function carregarApressentacoes() {
+async function carregarApresentacoes() {
   try {
-    console.log("🔄 Buscando apressentacoes...");
+    console.log("🔄 Buscando apresentacoes...");
     const response = await client.getEntries({
       content_type: 'disciplina',
       'fields.categoria': 'regimento',
-      'fields.tipo': 'aula',
+      'fields.tipo': 'apresentacoes',
       order: 'fields.ordem'
     });
-    window.carregarApressentacoes = carregarApressentacoes;
+    window.carregarApresentacoes = carregarApresentacoes;
 
-    console.log(`📚 ${response.items.length} apressentacoes recebidas`);
-    renderizarApressentacoes(response.items);
+    console.log(`📚 ${response.items.length} apresentacoes recebidas`);
+    renderizarApresentacoes(response.items);
   } catch (erro) {
-    console.error('❌ Erro ao buscar apressentacoes:', erro);
+    console.error('❌ Erro ao buscar apresentacoes:', erro);
   }
 }
 
 
-function renderizArapressentacoes(apressentacoes) {
-  const container = document.getElementById('lista-apressentacoes');
+function renderizarApresentacoes(apresentacoes) {
+  const container = document.getElementById('lista-apresentacoes');
   if (!container) {
-    console.warn("⚠️ Container #lista-apressentacoes não encontrado");
+    console.warn("⚠️ Container #lista-apresentacoes não encontrado");
     return;
   }
 
-  container.innerHTML = apressentacoes.length
-    ? apressentacoes.map(({ fields }) => {
+  container.innerHTML = apresentacoes.length
+    ? apresentacoes.map(({ fields }) => {
       const titulo = fields.titulo;
       const descricao = fields.descricao?.content?.[0]?.content?.[0]?.value || "Descrição não disponível.";
       const urlArquivo = fields.pdfoulink?.fields?.file?.url
@@ -241,14 +241,14 @@ function renderizArapressentacoes(apressentacoes) {
         : "#";
 
       return `
-          <div class="apressentacoes-bloco">
+          <div class="apresentacoes-bloco">
             <h3>${titulo}</h3>
             <p>${descricao}</p>
             <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
           </div>
         `;
     }).join('')
-    : '<p>Nenhuma apressentacoes encontrada.</p>';
+    : '<p>Nenhuma apresentacoes encontrada.</p>';
 }
 
 // 🧠 FLASHCARDS ESTÁTICOS
