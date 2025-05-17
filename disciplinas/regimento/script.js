@@ -151,7 +151,7 @@ function renderizarAulas(aulas) {
           <div class="aula-bloco">
             <h3>${titulo}</h3>
             <p>${descricao}</p>
-            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+            <a href="${urlArquivo}" target="_blank"><button class="botao bt_aula">📄 Acessar PDF</a></button>
           </div>
         `;
     }).join('')
@@ -159,7 +159,7 @@ function renderizarAulas(aulas) {
 }
 
 
-// RESUMOS
+// 📝  RESUMOS
 async function carregarResumos() {
   try {
     console.log("🔄 Buscando resumos...");
@@ -174,7 +174,7 @@ async function carregarResumos() {
     console.log(`📚 ${response.items.length} resumos recebidas`);
     renderizarResumos(response.items);
   } catch (erro) {
-    console.error('❌ Erro ao buscar resumos:', erro);
+    console.error('❌ Erro ao buscar aulas:', erro);
   }
 }
 
@@ -182,7 +182,7 @@ async function carregarResumos() {
 function renderizarResumos(resumos) {
   const container = document.getElementById('listar-resumos');
   if (!container) {
-    console.warn("⚠️ Container #lista-resumos não encontrado");
+    console.warn("⚠️ Container #listar-resumos não encontrado");
     return;
   }
 
@@ -198,11 +198,11 @@ function renderizarResumos(resumos) {
           <div class="resumos-bloco">
             <h3>${titulo}</h3>
             <p>${descricao}</p>
-            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+            <a href="${urlArquivo}" target="_blank"><button class="botao bt_resumo">📄 Acessar PDF</a></button>
           </div>
         `;
     }).join('')
-    : '<p>Nenhuma resumo encontrada.</p>';
+    : '<p>Nenhum resumo encontrada.</p>';
 }
 
 // 📄 Apresentação 
@@ -244,7 +244,7 @@ function renderizarApresentacoes(apresentacoes) {
           <div class="apresentacoes-bloco">
             <h3>${titulo}</h3>
             <p>${descricao}</p>
-            <a href="${urlArquivo}" target="_blank">📄 Acessar PDF</a>
+            <a href="${urlArquivo}" target="_blank"><button class="botao bt_apresentacoes">📄 Acessar PDF</a></button>
           </div>
         `;
     }).join('')
