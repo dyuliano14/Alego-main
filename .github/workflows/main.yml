@@ -1,0 +1,38 @@
+name: Update Disciplinas Content
+
+on:
+  repository_dispatch:
+    types: [update-content]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      - name: Trigger Flask to generate files
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.FLASK_WEBHOOK_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "X-GitHub-Event: push" \
+            ${{ secrets.FLASK_WEBHOOK_URL }}/webhook/gerar-disciplinas
+      
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update disciplinas via GitHub Actions"
+          git push
