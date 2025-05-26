@@ -31,6 +31,19 @@
 
     <!-- JS -->
 
+    <ul id="disciplinas"></ul>
+    <script>
+    fetch("https://seu-projeto-render.onrender.com/api/disciplinas/exportar")
+    .then(res => res.json())
+    .then(disciplinas => {
+        const lista = document.getElementById("disciplinas");
+        disciplinas.forEach(d => {
+        const item = document.createElement("li");
+        item.textContent = `${d.titulo} (${d.categoria})`;
+        lista.appendChild(item);
+        });
+    });
+    </script>
     <script src="./script.js" defer></script>
 
     <script>
@@ -80,6 +93,8 @@
         }
 
         inicializarComponentes();
+
+        
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
