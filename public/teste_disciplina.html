@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Disciplinas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Disciplinas Exportadas</h1>
+  <ul id="lista-disciplinas"></ul>
+
+  <script>
+    async function carregarDisciplinas() {
+      const lista = document.getElementById('lista-disciplinas');
+
+      try {
+        const resposta = await fetch('https://alego-admin.onrender.com/api/disciplinas/exportar');
+        if (!resposta.ok) throw new Error('Erro ao buscar dados');
+        const dados = await resposta.json();
+
+        dados.forEach(d => {
+          const li = document.createElement('li');
+          li.textContent = `📘 ${d.titulo} (${d.categoria})`;
+          lista.appendChild(li);
+        });
+      } catch (erro) {
+        console.error('Erro:', erro);
+        lista.innerHTML = '<li>Não foi possível carregar as disciplinas.</li>';
+      }
+    }
+
+    carregarDisciplinas();
+  </script>
+</body>
+</html>
