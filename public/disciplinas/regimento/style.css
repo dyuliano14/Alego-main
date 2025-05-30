@@ -3,6 +3,8 @@
     --cor-borda: #ddd;
     --cor-botao-aula: #ff9800;
     --cor-botao-aula-hover: #ff9900e3;
+    --cor-botao-mapa: gray;
+    --cor-botao-mapa-hover: rgb(175, 172, 172);
     --cor-botao-resumo: #9f21f3;
     --cor-botao-resumo-hover: #9f21f3d2;
     --cor-botao-apresentacoes: #08c828d1;
@@ -30,7 +32,7 @@
     border-radius: 8px;
     max-width: var(--max-width-modulo);
     margin-inline: auto;
-    
+
 }
 
 .modulo h2 {
@@ -59,6 +61,15 @@
 .bt_aula:hover {
     background-color: var(--cor-botao-aula-hover);
 }
+
+.bt_mapa {
+    background-color: var(--cor-botao-aula);
+}
+
+.bt_mapa:hover {
+    background-color: var(--cor-botao-aula-hover);
+}
+
 
 .bt_resumo {
     background-color: var(--cor-botao-resumo);
@@ -92,6 +103,23 @@
     border-radius: 8px;
     margin-bottom: 1rem;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.mapa {
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mapa h3,
+.mapa h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .aula_pdf h3,
@@ -148,7 +176,7 @@
 
 ul {
     list-style-type: none;
-    
+
 }
 
 li {
