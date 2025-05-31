@@ -22,7 +22,10 @@
         <div id="aulas"></div> <!-- Mantém esse id para o carregamento dinâmico -->
         <div id="resumos"></div>
         <div id="flashcard-container"></div>
+        <div id="mapas"></div>
         <div id="apresentacoes"></div>
+        
+
     </main>
     <div id="footer"></div>
 
@@ -71,7 +74,9 @@
                 ["aulas", "aulas.html"],
                 ["resumos", "resumos.html"],
                 ["flashcard-container", "flashcards.html"],
+                ["mapas", "mapa_mental.html"]
                 ["apresentacoes", "apresentacoes.html"]
+                
             ];
 
 
@@ -83,8 +88,11 @@
                     window.carregarAulas = carregarAulas;
                     if (id === "resumos") carregarResumos?.();
                     window.carregarResumos = carregarResumos;
+                    if (id === "mapas") carregarMapas?.();
+                    window.carregarMapas = carregarMapas;
                     if (id === "apresentacoes") carregarApresentacoes?.();
                     window.carregarApresentacoes = carregarApresentacoes;
+                   
 
                 });
             });

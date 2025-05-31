@@ -15,6 +15,7 @@ async function carregarComponentes() {
     ["resumos", "./resumos.html"],
     ["flashcard-container", "./flashcards.html"],
     ["apresentacoes", "./apresentacoes.html"],
+    ["mapas", "./mapa_mental.html"],
     ["footer", "../../modulos/footer.html"]
   ];
 
@@ -29,7 +30,9 @@ async function carregarComponentes() {
         if (id === "planejamento") window.carregarPlanejamento?.();
         if (id === "aulas") window.carregarAulas?.();
         if (id === "resumos") window.carregarResumos?.();
+        if (id === "mapas") window.carregarMapas?.();
         if (id === "apresentacoes") window.carregarApresentacoes?.();
+        
       }
     } catch (erro) {
       console.error(`❌ Falha ao carregar componente ${id} de ${url}`, erro);
